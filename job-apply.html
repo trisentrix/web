@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Apply | Trisentrix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/img/favicon.png" />
+    <link rel="shortcut icon" href="./assets/img/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/fonts/unicons/unicons.css"
+    />
+    <link rel="stylesheet" href="./assets/css/plugins.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, Arial, sans-serif;
+        background: #edf2fc;
+        color: #0f172a;
+      }
+
+      /* ================= HEADER ================= */
+      header {
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        position: relative;
+        z-index: 100;
+      }
+      .phone-row {
+        display: flex;
+        gap: 8px;
+      }
+
+      .phone-row select {
+        width: 140px;
+      }
+
+      /* Mobile: stack vertically */
+      @media (max-width: 576px) {
+        .phone-row {
+          flex-direction: column;
+        }
+
+        .phone-row select,
+        .phone-row input {
+          width: 100%;
+        }
+      }
+      /* .nav {
+        display: flex;
+        gap: 32px;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .nav a {
+        text-decoration: none;
+        font-weight: 600;
+        color: #0f172a;
+      }
+      .nav a:hover {
+        color: #3f78e0;
+      } */
+
+      .contact-btn {
+        padding: 10px 22px;
+        background: #3f78e0;
+        color: #fff;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* ================= PAGE ================= */
+      .wrapper {
+        max-width: 900px;
+        margin: 70px auto;
+        background: #ffffff;
+        padding: 56px;
+        border-radius: 20px;
+        box-shadow: 0 24px 56px rgba(0, 0, 0, 0.08);
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-bottom: 6px;
+      }
+      .job-meta {
+        color: #64748b;
+        margin-bottom: 34px;
+      }
+      h2 {
+        font-size: 22px;
+        margin: 36px 0 14px;
+      }
+      p {
+        font-size: 15.5px;
+        line-height: 1.8;
+        color: #334155;
+      }
+      ul {
+        padding-left: 22px;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+
+      /* ================= APPLY BOX ================= */
+      .apply-box {
+        margin-top: 56px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 18px;
+        padding: 44px;
+      }
+      .apply-note {
+        color: #64748b;
+        margin-bottom: 30px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      input,
+      select {
+        height: 48px;
+        padding: 0 14px;
+        border-radius: 8px;
+        border: 1px solid #cbd5e1;
+        font-size: 14px;
+        box-sizing: border-box;
+        font-family: inherit;
+      }
+
+      .error {
+        color: #ef4444;
+        margin-top: 12px;
+        text-align: center;
+      }
+
+      input[type="file"] {
+        padding: 8px 14px;
+        display: block;
+        height: auto;
+        line-height: 1.5;
+      }
+
+      .full {
+        grid-column: span 2;
+      }
+
+      /* File input */
+      .file-wrap {
+        grid-column: span 2;
+      }
+
+      button {
+        display: block;
+        margin: 42px auto 0;
+        padding: 14px 60px;
+        background: #3f78e0;
+        color: #ffffff;
+        border: none;
+        border-radius: 999px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background: #2d5ab8;
+      }
+
+      button:disabled {
+        background: #94a3b8;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+
+      button.loading {
+        position: relative;
+      }
+
+      button.loading::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        margin: auto;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        border-top-color: #ffffff;
+        animation: spin 0.8s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      footer {
+        background: #21262c;
+        padding: 70px 0;
+        margin-top: 80px;
+        font-family: Manrope, ui-sans-serif, system-ui, sans-serif !important;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 24px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 60px;
+        align-items: start;
+      }
+
+      /* BRAND */
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .footer-brand img {
+        width: 200px !important;
+        height: 80px !important;
+        object-fit: contain;
+        flex-shrink: 0;
+        display: block !important;
+      }
+
+      .footer-brand span {
+        font-size: 24px;
+        font-weight: 700;
+        color: #f59e0b;
+      }
+
+      .footer-links a {
+        color: #cbd5e1;
+        font-size: 14px;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .footer-links a:hover {
+        color: #3f78e0;
+      }
+
+      footer h4 {
+        color: #ffffff;
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+
+      footer p {
+        color: #cbd5e1;
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 12px;
+      }
+
+      /* NEWSLETTER */
+      .newsletter-box {
+        display: flex;
+        gap: 0;
+        margin-top: 14px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .newsletter-box input {
+        flex: 1;
+        height: 48px;
+        padding: 0 14px;
+        border: none;
+        border-radius: 6px 0 0 6px;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 14px;
+        background-color: white;
+      }
+
+      .newsletter-box button {
+        height: 48px;
+        padding: 0 28px;
+        border: none;
+        background: #3f78e0;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 0 6px 6px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        font-size: 14px;
+        margin: 0;
+        line-height: 1;
+      }
+      #jobSkills {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      #jobSkills li {
+        margin-bottom: 8px;
+        line-height: 1.6;
+      }
+      /* Style the input box */
+      input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #cfd8e3;
+        border-radius: 8px;
+        font-size: 14px;
+        background-color: #fff;
+        cursor: pointer;
+      }
+
+      /* Style ONLY the button part */
+      input[type="file"]::file-selector-button {
+        padding: 8px 16px;
+        margin-right: 12px;
+        border: none;
+        border-radius: 6px;
+        background-color: #4f6ef7;
+        color: #fff;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      /* Hover effect */
+      input[type="file"]::file-selector-button:hover {
+        background-color: #3b57e3;
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 576px) {
+        input[type="file"]::file-selector-button {
+          width: fit-content;
+          margin-bottom: 6px;
+        }
+        input[type="file"] {
+          text-align: center;
+        }
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .apply-box {
+          padding: 24px;
+        }
+        .wrapper {
+          margin: 40px 16px;
+          padding: 32px;
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .full,
+        .file-wrap {
+          grid-column: span 1;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          position: static;
+          transform: none;
+          margin-top: 12px;
+        }
+
+        .header {
+          flex-direction: column;
+          gap: 14px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+        <div
+          class="container xl:!flex-row lg:!flex-row !flex-nowrap items-center"
+        >
+          <div class="navbar-brand w-full">
+            <a href="./index.html">
+              <img
+                src="./assets/img/trise/logo.png"
+                srcset="./assets/img/trise/logo.png 2x"
+                alt="image"
+                width="220"
+              />
+            </a>
+          </div>
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+            <div
+              class="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between flex-row p-6"
+            >
+              <h3
+                class="!text-white xl:!text-[1.5rem] !text-[calc(1.275rem_+_0.3vw)] !mb-0"
+              >
+                Trisentrix
+              </h3>
+              <button
+                type="button"
+                class="btn-close btn-close-white !mr-[-0.75rem] m-0 p-0 leading-none !text-[#343f52] transition-all duration-[0.2s] ease-in-out border-0 motion-reduce:transition-none before:text-[1.05rem] before:text-white before:content-['\ed3b'] before:w-[1.8rem] before:h-[1.8rem] before:leading-[1.8rem] before:shadow-none before:transition-[background] before:duration-[0.2s] before:ease-in-out before:!flex before:justify-center before:items-center before:m-0 before:p-0 before:rounded-[100%] hover:no-underline bg-inherit before:bg-[rgba(255,255,255,.08)] before:font-Unicons hover:before:bg-[rgba(0,0,0,.11)]"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              class="offcanvas-body xl:!ml-auto lg:!ml-auto flex flex-col !h-full"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="product.html">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="career.html">Careers</a>
+                </li>
+              </ul>
+              <!-- /.navbar-nav -->
+              <div class="offcanvas-footer xl:!hidden lg:!hidden">
+                <div>
+                  <a href="mailto:first.last@email.com" class="link-inverse"
+                    >contactus@trisentrix.com</a
+                  >
+                  <br />
+                  <br />
+                  <nav class="nav social social-white !mt-4">
+                    <a
+                      class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                      href="#"
+                      ><i
+                        class="uil uil-twitter before:content-['\ed59'] !text-white text-[1rem]"
+                      ></i
+                    ></a>
+                    <a
+                      class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                      href="#"
+                      ><i
+                        class="uil uil-facebook-f before:content-['\eae2'] !text-white text-[1rem]"
+                      ></i
+                    ></a>
+                    <a
+                      class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                      href="#"
+                      ><i
+                        class="uil uil-dribbble before:content-['\eaa2'] !text-white text-[1rem]"
+                      ></i
+                    ></a>
+                    <a
+                      class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                      href="#"
+                      ><i
+                        class="uil uil-instagram before:content-['\eb9c'] !text-white text-[1rem]"
+                      ></i
+                    ></a>
+                    <a
+                      class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                      href="#"
+                      ><i
+                        class="uil uil-youtube before:content-['\edb5'] !text-white text-[1rem]"
+                      ></i
+                    ></a>
+                  </nav>
+                  <!-- /.social -->
+                </div>
+              </div>
+              <!-- /.offcanvas-footer -->
+            </div>
+            <!-- /.offcanvas-body -->
+          </div>
+          <!-- /.navbar-collapse -->
+          <div class="navbar-other w-full !flex !ml-auto">
+            <ul class="navbar-nav !flex-row !items-center !ml-auto">
+              <!-- <li class="nav-item dropdown language-select uppercase group">
+                <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En</a>
+                <ul class="dropdown-menu group-hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]">
+                  <li class="nav-item"><a class="dropdown-item hover:!text-[#3f78e0] hover:bg-[inherit] " href="#">En</a></li>
+                  <li class="nav-item"><a class="dropdown-item hover:!text-[#3f78e0] hover:bg-[inherit] " href="#">De</a></li>
+                  <li class="nav-item"><a class="dropdown-item hover:!text-[#3f78e0] hover:bg-[inherit] " href="#">Es</a></li>
+                </ul>
+              </li> -->
+              <li class="nav-item hidden xl:block lg:block md:block">
+                <a
+                  href="./contact.html"
+                  class="btn btn-sm btn-primary !text-white !bg-[#3f78e0] border-[#3f78e0] hover:text-white hover:bg-[#3f78e0] hover:!border-[#3f78e0] active:text-white active:bg-[#3f78e0] active:border-[#3f78e0] disabled:text-white disabled:bg-[#3f78e0] disabled:border-[#3f78e0] !rounded-[50rem] hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"
+                  >Contact</a
+                >
+              </li>
+              <li class="nav-item xl:!hidden lg:!hidden">
+                <button class="hamburger offcanvas-nav-btn">
+                  <span></span>
+                </button>
+              </li>
+            </ul>
+            <!-- /.navbar-nav -->
+          </div>
+          <!-- /.navbar-other -->
+        </div>
+        <!-- /.container -->
+      </nav>
+      <!-- /.navbar -->
+    </header>
+    <!-- /header -->
+
+    <!-- CONTENT -->
+    <div class="wrapper">
+      <h1 id="jobTitle"></h1>
+      <div class="job-meta" id="jobMeta"></div>
+
+      <h2>Job Overview</h2>
+      <p id="jobOverview"></p>
+
+      <h2>Key Technical Skills & Experience</h2>
+      <ul id="jobSkills"></ul>
+
+      <div class="apply-box">
+        <h2>Apply for this Position</h2>
+        <p class="apply-note">
+          Applications are reviewed within <strong>48 business hours</strong>.
+        </p>
+
+        <form onsubmit="submitForm(event)">
+          <div class="form-grid">
+            <input id="name" required placeholder="Full Name *" />
+            <input id="email" type="email" required placeholder="Email *" />
+            <div class="phone-row">
+              <select id="countryCode"></select>
+              <input id="phone" required placeholder="Phone Number *" />
+            </div>
+            <select id="experience" required>
+              <option value="">Select Experience *</option>
+              <option>0–1 Years</option>
+              <option>1–3 Years</option>
+              <option>3–5 Years</option>
+              <option>5–9 Years</option>
+              <option>9+ Years</option>
+            </select>
+            <input
+              id="driveLink"
+              class="full"
+              placeholder="Resume Google Drive Link (optional)"
+            />
+            <input
+              id="resume"
+              type="file"
+              class="full"
+              accept=".pdf,application/pdf"
+              required
+            />
+          </div>
+          <button type="submit" id="submitBtn">Submit Application</button>
+          <p class="error" id="error"></p>
+        </form>
+        <div
+          class="progress-wrap fixed w-[2.3rem] h-[2.3rem] cursor-pointer block shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010] translate-y-3 transition-all duration-[0.2s] ease-[linear,margin-right] delay-[0s] rounded-[100%] right-6 bottom-6 motion-reduce:transition-none after:absolute after:content-['\e951'] after:text-center after:leading-[2.3rem] after:text-[1.2rem] after:!text-[#3f78e0] after:h-[2.3rem] after:w-[2.3rem] after:cursor-pointer after:block after:z-[1] after:transition-all after:duration-[0.2s] after:ease-linear after:left-0 after:top-0 motion-reduce:after:transition-none after:font-Unicons"
+        >
+          <svg
+            class="progress-circle svg-content"
+            width="100%"
+            height="100%"
+            viewBox="-1 -1 102 102"
+          >
+            <path
+              class="fill-none stroke-[#3f78e0] stroke-[4] box-border transition-all duration-[0.2s] ease-linear motion-reduce:transition-none"
+              d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- BRAND -->
+          <div>
+            <div class="footer-brand">
+              <img
+                src="./assets/img/trise/logo.png"
+                alt="Trisentrix"
+                width="200"
+                height="80"
+              />
+            </div>
+
+            <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+            </div>
+
+            <p>© 2025 Trisentrix<br />All rights reserved.</p>
+          </div>
+
+          <!-- CONTACT -->
+          <div>
+            <h4>Get in Touch</h4>
+            <p>
+              715-A, 7th Floor,<br />
+              Spenser Plaza,<br />
+              Mount Road,<br />
+              Chennai – 600002
+            </p>
+            <p>contactus@trisentrix.com</p>
+          </div>
+
+          <!-- LINKS -->
+          <div>
+            <h4>Learn More</h4>
+            <div class="footer-links">
+              <a href="about.html">About Us</a>
+              <a href="services.html">Services</a>
+              <a href="product.html">Products</a>
+              <a href="career.html">Careers</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+
+          <!-- NEWSLETTER -->
+          <div>
+            <h4>Our Newsletter</h4>
+            <p>
+              Subscribe to our newsletter to get our news & deals delivered to
+              you.
+            </p>
+
+            <div class="newsletter-box">
+              <input type="email" placeholder="Email Address" />
+              <button type="button">Join</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const dropdown = document.getElementById("countryCode");
+
+      // Show loading state
+      dropdown.innerHTML = `<option value="">Loading...</option>`;
+
+      fetch("https://restcountries.com/v3.1/all?fields=name,idd")
+        .then((res) => {
+          if (!res.ok) throw new Error("API failed");
+          return res.json();
+        })
+        .then((data) => {
+          const countries = data
+            .map((c) => {
+              const root = c.idd?.root;
+              const suffix = c.idd?.suffixes?.[0];
+              if (!root || !suffix) return null;
+
+              return {
+                name: c.name.common,
+                code: root + suffix,
+              };
+            })
+            .filter(Boolean)
+            .sort((a, b) => a.name.localeCompare(b.name));
+
+          dropdown.innerHTML = `<option value="">Select Code</option>`;
+
+          countries.forEach((country) => {
+            const option = document.createElement("option");
+            option.value = country.code;
+            option.textContent = `${country.name} (${country.code})`;
+            dropdown.appendChild(option);
+          });
+        })
+        .catch((err) => {
+          console.error("Country load failed:", err);
+          dropdown.innerHTML = `<option value="">Failed to load</option>`;
+        });
+      const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+      const ALLOWED_TYPES = ["application/pdf"];
+      const jobData = {
+        java: {
+          title: "Java Engineers",
+          meta: "1–9 Years · Full Time · Chennai / Remote",
+          overview:
+            "As a Java Developer at Trisentrix, you will work on large-scale enterprise and banking platforms, contributing to the design, development, and integration of secure backend systems used by global financial institutions.",
+          skills: [
+            "Strong experience with Java 8+, Spring Boot, Spring Data JPA, and RESTful services",
+            "Proficient in PostgreSQL including complex queries, indexing, and performance tuning",
+            "Hands-on experience with Core Banking systems such as Finacle, Flexcube, TCS BaNCS, or Temenos",
+            "Good understanding of banking products including accounts, loans, payments, and cards",
+            "Experience with Kafka, RabbitMQ, SOAP/XML services, or file-based integrations",
+            "Exposure to microservices architecture, CI/CD pipelines, Docker, and Git",
+            "Familiarity with authentication protocols like OAuth2, JWT, and banking standards",
+          ],
+        },
+        ml: {
+          title: "Machine Learning Engineer",
+          meta: "2–7 Years · Full Time · Remote",
+          overview:
+            "You will design, build, and deploy scalable machine learning solutions that power intelligent, data-driven platforms across multiple business domains.",
+          skills: [
+            "Strong programming experience in Python with TensorFlow or PyTorch",
+            "Experience building, training, and deploying ML models to production",
+            "Hands-on experience with data preprocessing, feature engineering, and analytics",
+            "Knowledge of statistics, algorithms, and machine learning fundamentals",
+            "Experience working with cloud-based ML platforms and pipelines",
+            "Ability to translate business problems into ML-driven solutions",
+          ],
+        },
+        cloud: {
+          title: "Cloud Solutions Architect",
+          meta: "5–10 Years · Full Time · Chennai / Remote",
+          overview:
+            "Responsible for designing and implementing secure, scalable cloud architectures that support enterprise-grade applications and services.",
+          skills: [
+            "Deep expertise in AWS, Azure, or Google Cloud platforms",
+            "Designing highly available, fault-tolerant cloud systems",
+            "Infrastructure as Code using Terraform or CloudFormation",
+            "Cloud security, IAM policies, and compliance standards",
+            "Experience with cloud migration and modernization projects",
+            "Cost optimization and performance monitoring strategies",
+          ],
+        },
+        devops: {
+          title: "DevOps Engineer",
+          meta: "3–8 Years · Full Time · Chennai / Remote",
+          overview:
+            "You will automate, monitor, and optimize deployment pipelines while ensuring reliability and scalability of production systems.",
+          skills: [
+            "Strong experience with CI/CD tools such as Jenkins or GitHub Actions",
+            "Hands-on experience with Docker and Kubernetes",
+            "Linux system administration and scripting skills",
+            "Monitoring, logging, and alerting tools",
+            "Cloud infrastructure management",
+            "Infrastructure as Code and automation best practices",
+          ],
+        },
+        fsd: {
+          title: "Full Stack Developer",
+          meta: "2–6 Years · Full Time · Chennai / Remote",
+          overview:
+            "Develop end-to-end web applications with modern frontend frameworks and robust backend services.",
+          skills: [
+            "Frontend development using React, Angular, or Vue",
+            "Backend API development and integration",
+            "Working knowledge of SQL and NoSQL databases",
+            "Authentication, authorization, and security best practices",
+            "Agile development workflows and Git version control",
+            "Deployment and maintenance of cloud-based applications",
+          ],
+        },
+        iot: {
+          title: "IoT Engineer",
+          meta: "2–7 Years · Full Time · Chennai / Remote",
+          overview:
+            "Design and develop secure, scalable IoT solutions connecting devices, platforms, and cloud services.",
+          skills: [
+            "IoT architecture and system design",
+            "Experience with MQTT, HTTP, and device communication protocols",
+            "Cloud-based IoT platforms and device management",
+            "Edge computing and real-time data processing",
+            "Secure device communication and authentication",
+            "Monitoring, diagnostics, and lifecycle management",
+          ],
+        },
+      };
+
+      const role = new URLSearchParams(location.search).get("role") || "java";
+      const job = jobData[role];
+
+      jobTitle.textContent = job.title;
+      jobMeta.textContent = job.meta;
+      jobOverview.textContent = job.overview;
+      jobSkills.innerHTML = job.skills.map((s) => `<li>${s}</li>`).join("");
+
+      const WEB_APP_URL =
+        "https://script.google.com/macros/s/AKfycbyz6J5tMGS2aVi-z8qB1dOb10gZxkK0-SQF00OtH2pc2JGiJxmdYJ_keHag3iZnRxvfuQ/exec";
+
+      function submitForm(e) {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById("submitBtn");
+        const errorMsg = document.getElementById("error");
+        const file = document.getElementById("resume").files[0];
+
+        if (!file) {
+          errorMsg.innerText = "Please upload resume PDF";
+          return;
+        }
+
+        // ✅ File size check
+        if (file.size > MAX_FILE_SIZE) {
+          errorMsg.innerText = "File size must be less than 5 MB";
+          return;
+        }
+
+        // ✅ MIME type check (stronger than extension)
+        if (!ALLOWED_TYPES.includes(file.type)) {
+          errorMsg.innerText = "Only PDF files are allowed";
+          return;
+        }
+
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.classList.add("loading");
+        submitBtn.innerHTML = "Submitting...";
+        errorMsg.innerText = "";
+        const countryCode = document.getElementById("countryCode").value;
+        const phoneNumber = document.getElementById("phone").value;
+
+        const reader = new FileReader();
+        reader.onload = function () {
+          const base64 = reader.result.split(",")[1];
+
+          const payload = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: countryCode + " " + phoneNumber,
+
+            experience: document.getElementById("experience").value,
+            role: job.title || role,
+            resumeBase64: base64,
+            resumeFileName: file.name,
+            driveLink: document.getElementById("driveLink").value || "",
+          };
+
+          fetch(WEB_APP_URL, {
+            method: "POST",
+            body: JSON.stringify(payload),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.status === "success") {
+                window.location.href = "thankyou.html";
+              } else {
+                errorMsg.innerText = data.message || "Submission failed";
+                submitBtn.disabled = false;
+                submitBtn.classList.remove("loading");
+                submitBtn.innerHTML = "Submit Application";
+              }
+            })
+            .catch((error) => {
+              errorMsg.innerText = "Submission failed. Please try again.";
+              submitBtn.disabled = false;
+              submitBtn.classList.remove("loading");
+              submitBtn.innerHTML = "Submit Application";
+            });
+        };
+
+        reader.readAsDataURL(file);
+      }
+    </script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

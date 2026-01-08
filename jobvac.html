@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers | Trisentrix</title>
+
+    <link rel="shortcut icon" href="./assets/img/favicon.png" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/fonts/unicons/unicons.css"
+    />
+    <link rel="stylesheet" href="./assets/css/plugins.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #edf2fc;
+        color: #0f172a;
+      }
+
+      /* ================= FEATURE ================= */
+      .feature-strip {
+        background: #ffffff;
+        padding: 46px 20px;
+      }
+      .feature-grid {
+        max-width: 1100px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      .feature {
+        text-align: center;
+      }
+      .feature p {
+        color: #64748b;
+        line-height: 1.6;
+      }
+
+      /* ================= HERO ================= */
+      .hero {
+        text-align: center;
+        padding: 60px 20px 30px;
+      }
+      .hero h1 {
+        font-size: 44px;
+        margin-bottom: 10px;
+      }
+      .hero p {
+        font-size: 20px;
+        color: #64748b;
+        max-width: 720px;
+        margin: auto;
+      }
+
+      /* ================= BOXES ================= */
+      .box-grid {
+        max-width: 1100px;
+        margin: 50px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+      .main-box {
+        background: #fff;
+        border-radius: 26px;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+        transition: 0.3s;
+      }
+      .main-box:hover {
+        transform: translateY(-6px);
+      }
+      .main-box img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .main-box .content {
+        padding: 26px;
+      }
+      .main-box p {
+        color: #64748b;
+        line-height: 1.6;
+      }
+
+      /* ================= ENGAGE ================= */
+      .engage {
+        background: #ffffff;
+        padding: 70px 20px;
+      }
+      .engage-inner {
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+      }
+      .engage p {
+        max-width: 780px;
+        margin: 0 auto 40px;
+        color: #64748b;
+        line-height: 1.8;
+      }
+      .engage-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      .engage-card {
+        background: #f8fafc;
+        padding: 28px;
+        border-radius: 18px;
+      }
+
+      /* ================= ROLES ================= */
+      .role-section {
+        max-width: 1100px;
+        margin: 0 auto 80px;
+        padding: 0 20px;
+        display: none;
+      }
+      .roles {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .role-card {
+        flex: 1;
+        min-width: 260px;
+        background: #fff;
+        padding: 26px;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+      }
+      .role-card:hover {
+        border: 2px solid #3f78e0;
+      }
+      .role-card p {
+        color: #64748b;
+      }
+
+      @media (max-width: 900px) {
+        .box-grid,
+        .feature-grid,
+        .engage-grid {
+          grid-template-columns: 1fr;
+        }
+        .roles {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== APPROVED HEADER ===== -->
+    <header>
+      <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+        <div
+          class="container xl:!flex-row lg:!flex-row !flex-nowrap items-center"
+        >
+          <div class="navbar-brand w-full">
+            <a href="./index.html">
+              <img
+                src="./assets/img/trise/logo.png"
+                srcset="./assets/img/trise/logo.png 2x"
+                alt="image"
+                width="220"
+              />
+            </a>
+          </div>
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+            <div
+              class="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between flex-row p-6"
+            >
+              <h3
+                class="!text-white xl:!text-[1.5rem] !text-[calc(1.275rem_+_0.3vw)] !mb-0"
+              >
+                Trisentrix
+              </h3>
+              <button
+                type="button"
+                class="btn-close btn-close-white !mr-[-0.75rem] m-0 p-0 leading-none !text-[#343f52] transition-all duration-[0.2s] ease-in-out border-0 motion-reduce:transition-none before:text-[1.05rem] before:text-white before:content-['\ed3b'] before:w-[1.8rem] before:h-[1.8rem] before:leading-[1.8rem] before:shadow-none before:transition-[background] before:duration-[0.2s] before:ease-in-out before:!flex before:justify-center before:items-center before:m-0 before:p-0 before:rounded-[100%] hover:no-underline bg-inherit before:bg-[rgba(255,255,255,.08)] before:font-Unicons hover:before:bg-[rgba(0,0,0,.11)]"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              class="offcanvas-body xl:!ml-auto lg:!ml-auto flex flex-col !h-full"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="product.html">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="career.html">Careers</a>
+                </li>
+              </ul>
+              <!-- /.navbar-nav -->
+              <div class="offcanvas-footer xl:!hidden lg:!hidden">
+                <div>
+                  <a href="mailto:first.last@email.com" class="link-inverse"
+                    >contactus@trisentrix.com</a
+                  >
+                  <br />
+                  <br />
+                  <nav class="nav social social-white !mt-4">
+                    <a
+                      class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                      href="#"
+                      ><i
+                        class="uil uil-twitter before:content-['\ed59'] !text-white text-[1rem]"
+                      ></i
+                    ></a>
+                    <a
+                      class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                      href="#"
+                      ><i
+                        class="uil uil-facebook-f before:content-['\eae2'] !text-white text-[1rem]"
+                      ></i
+                    ></a>
+                    <a
+                      class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                      href="#"
+                      ><i
+                        class="uil uil-dribbble before:content-['\eaa2'] !text-white text-[1rem]"
+                      ></i
+                    ></a>
+                    <a
+                      class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                      href="#"
+                      ><i
+                        class="uil uil-instagram before:content-['\eb9c'] !text-white text-[1rem]"
+                      ></i
+                    ></a>
+                    <a
+                      class="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                      href="#"
+                      ><i
+                        class="uil uil-youtube before:content-['\edb5'] !text-white text-[1rem]"
+                      ></i
+                    ></a>
+                  </nav>
+                  <!-- /.social -->
+                </div>
+              </div>
+              <!-- /.offcanvas-footer -->
+            </div>
+            <!-- /.offcanvas-body -->
+          </div>
+          <!-- /.navbar-collapse -->
+          <div class="navbar-other w-full !flex !ml-auto">
+            <ul class="navbar-nav !flex-row !items-center !ml-auto">
+              <!-- <li class="nav-item dropdown language-select uppercase group">
+                <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En</a>
+                <ul class="dropdown-menu group-hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]">
+                  <li class="nav-item"><a class="dropdown-item hover:!text-[#3f78e0] hover:bg-[inherit] " href="#">En</a></li>
+                  <li class="nav-item"><a class="dropdown-item hover:!text-[#3f78e0] hover:bg-[inherit] " href="#">De</a></li>
+                  <li class="nav-item"><a class="dropdown-item hover:!text-[#3f78e0] hover:bg-[inherit] " href="#">Es</a></li>
+                </ul>
+              </li> -->
+              <li class="nav-item hidden xl:block lg:block md:block">
+                <a
+                  href="./contact.html"
+                  class="btn btn-sm btn-primary !text-white !bg-[#3f78e0] border-[#3f78e0] hover:text-white hover:bg-[#3f78e0] hover:!border-[#3f78e0] active:text-white active:bg-[#3f78e0] active:border-[#3f78e0] disabled:text-white disabled:bg-[#3f78e0] disabled:border-[#3f78e0] !rounded-[50rem] hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"
+                  >Contact</a
+                >
+              </li>
+              <li class="nav-item xl:!hidden lg:!hidden">
+                <button class="hamburger offcanvas-nav-btn">
+                  <span></span>
+                </button>
+              </li>
+            </ul>
+            <!-- /.navbar-nav -->
+          </div>
+          <!-- /.navbar-other -->
+        </div>
+        <!-- /.container -->
+      </nav>
+      <!-- /.navbar -->
+    </header>
+    <!-- /header -->
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Join Trisentrix</h1>
+      <p>
+        Explore career opportunities and grow with a team that values
+        innovation, excellence, and impact.
+      </p>
+    </section>
+
+    <!-- FEATURE STRIP -->
+    <section class="feature-strip">
+      <div class="feature-grid">
+        <div class="feature">
+          <h4>Enterprise Projects</h4>
+          <p>
+            Work on real-world systems used by global enterprises and
+            institutions.
+          </p>
+        </div>
+        <div class="feature">
+          <h4>Career Growth</h4>
+          <p>
+            Clear growth paths, mentorship, and continuous learning
+            opportunities.
+          </p>
+        </div>
+        <div class="feature">
+          <h4>People-First Culture</h4>
+          <p>
+            A collaborative environment where talent and ideas truly matter.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN BOXES (UNTOUCHED) -->
+    <section class="box-grid">
+      <div class="main-box" onclick="showCurrent()">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" />
+        <div class="content">
+          <h3>Current Hiring</h3>
+          <p>
+            Join active openings and work on enterprise-grade technology
+            solutions.
+          </p>
+        </div>
+      </div>
+
+      <div class="main-box" onclick="location.href='Internship-Page.html'">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+        />
+        <div class="content">
+          <h3>Internships</h3>
+          <p>Hands-on programs designed to launch your professional journey.</p>
+        </div>
+      </div>
+
+      <div class="main-box" onclick="showAllRoles()">
+        <img
+          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        />
+        <div class="content">
+          <h3>All-Time Roles</h3>
+          <p>
+            Explore long-term career paths across multiple technology domains.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRENT ROLE -->
+    <section id="currentRole" class="role-section">
+      <h2>Current Opening</h2>
+      <div class="roles">
+        <div
+          class="role-card"
+          onclick="location.href='job-apply.html?role=java'"
+        >
+          <h4>Java Engineers</h4>
+          <p>
+            Build scalable backend systems using Java, Spring Boot, and cloud
+            platforms.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALL ROLES -->
+    <section id="allRoles" class="role-section">
+      <h2>All-Time Roles</h2>
+      <div class="roles">
+        <div
+          class="role-card"
+          onclick="location.href='job-apply.html?role=cloud'"
+        >
+          <h4>Cloud Architect</h4>
+          <p>
+            Build and optimize secure cloud infrastructure on AWS, Azure, or GCP
+            with enterprise-grade reliability.
+          </p>
+        </div>
+        <div
+          class="role-card"
+          onclick="location.href='job-apply.html?role=fsd'"
+        >
+          <h4>Full Stack Developer</h4>
+          <p>
+            Create end-to-end web applications with modern frontend and backend
+            technologies.
+          </p>
+        </div>
+        <div
+          class="role-card"
+          onclick="location.href='job-apply.html?role=iot'"
+        >
+          <h4>IoT Engineer</h4>
+          <p>
+            Develop intelligent connected device solutions and edge computing
+            systems for smart applications.
+          </p>
+        </div>
+        <div class="role-card" onclick="location.href='job-apply.html?role=ml'">
+          <h4>Machine Learning Engineer</h4>
+          <p>
+            Build AI/ML models and data pipelines that drive intelligent
+            decision-making systems.
+          </p>
+        </div>
+        <div
+          class="role-card"
+          onclick="location.href='job-apply.html?role=devops'"
+        >
+          <h4>DevOps Engineer</h4>
+          <p>
+            Automate deployments, manage cloud infrastructure, and optimize
+            CI/CD pipelines for continuous excellence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGAGEMENT SECTION -->
+    <section class="engage">
+      <div class="engage-inner">
+        <h2>Why Build Your Career With Us?</h2>
+        <p>
+          At Trisentrix, we believe careers are built through meaningful work,
+          strong mentorship, and trust. We empower our people to innovate, take
+          ownership, and grow alongside cutting-edge technology.
+        </p>
+        <div class="engage-grid">
+          <div class="engage-card">
+            <h4>Innovation Driven</h4>
+            <p>We encourage experimentation and forward-thinking solutions.</p>
+          </div>
+          <div class="engage-card">
+            <h4>Long-Term Vision</h4>
+            <p>Stable projects and sustainable growth opportunities.</p>
+          </div>
+          <div class="engage-card">
+            <h4>Supportive Leadership</h4>
+            <p>Transparent communication and guidance at every level.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="!bg-[#21262c] shrink-0">
+      <div class="container py-16 xl:!py-20 lg:!py-20 md:!py-20">
+        <div class="flex flex-wrap mx-[-15px] !mt-[-30px] xl:!mt-0 lg:!mt-0">
+          <div
+            class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full px-[15px] !mt-[30px]"
+          >
+            <div class="widget !text-[#cacaca]">
+              <img
+                class="!mb-4"
+                src="./assets/img/trise/logo.png"
+                style="width: 120px; height: auto; display: block"
+                alt="Trisentrix"
+              />
+
+              <ul class="pl-0 list-none !mb-0">
+                <li>
+                  <a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#">
+                    Terms of Use
+                  </a>
+                </li>
+              </ul>
+
+              <p class="!mb-0 !mt-5">
+                © 2025 Trisentrix.<br class="hidden xl:block lg:block" />
+                All rights reserved.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full px-[15px] !mt-[30px]"
+          >
+            <div class="widget !text-[#cacaca]">
+              <h4 class="widget-title !text-white !mb-3">Get in Touch</h4>
+
+              <address class="not-italic !leading-[inherit] !mb-4">
+                715-A, 7th Floor,<br />
+                Spenser Plaza,<br />
+                Mount Road,<br />
+                Chennai - 600002.
+              </address>
+
+              <a
+                class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                href="mailto:contactus@trisentrix.com"
+                style="color: #ffffff !important; text-decoration: none"
+              >
+                contactus@trisentrix.com
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full px-[15px] !mt-[30px]"
+          >
+            <div class="widget !text-[#cacaca]">
+              <h4 class="widget-title !text-white !mb-3">Learn More</h4>
+
+              <ul class="pl-0 list-none !mb-0">
+                <li>
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="about.html"
+                    >About Us</a
+                  >
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="services.html"
+                    >Services</a
+                  >
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="product.html"
+                    >Products</a
+                  >
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="career.html"
+                    >Careers</a
+                  >
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="contact.html"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="md:w-full xl:w-3/12 lg:w-3/12 w-full px-[15px] !mt-[30px]"
+          >
+            <div class="widget !text-[#cacaca]">
+              <h4 class="widget-title !text-white !mb-3">Our Newsletter</h4>
+
+              <p class="!mb-5">
+                Subscribe to our newsletter to get our news & deals delivered to
+                you.
+              </p>
+
+              <div class="newsletter-wrapper">
+                <div
+                  class="input-group"
+                  style="
+                    display: flex;
+                    gap: 0;
+                    align-items: stretch;
+                    width: 100%;
+                  "
+                >
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email Address"
+                    aria-label="Email Address"
+                    style="
+                      background: #ffffff;
+                      color: #000000;
+                      padding: 12px 16px;
+                      border-radius: 6px 0 0 6px;
+                      border: none;
+                      flex: 1;
+                      min-width: 200px;
+                      height: 48px;
+                      box-sizing: border-box;
+                      font-size: 14px;
+                    "
+                  />
+
+                  <button
+                    class="btn btn-primary"
+                    style="
+                      background: #3f78e0;
+                      border-radius: 0 6px 6px 0;
+                      border: none;
+                      padding: 0 24px;
+                      color: #fff;
+                      font-weight: 600;
+                      white-space: nowrap;
+                      cursor: pointer;
+                      height: 48px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 14px;
+                    "
+                  >
+                    Join
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="progress-wrap fixed w-[2.3rem] h-[2.3rem] cursor-pointer block shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010] opacity-0 invisible translate-y-3 transition-all duration-[0.2s] ease-[linear,margin-right] delay-[0s] rounded-[100%] right-6 bottom-6 motion-reduce:transition-none after:absolute after:content-['\e951'] after:text-center after:leading-[2.3rem] after:text-[1.2rem] after:!text-[#3f78e0] after:h-[2.3rem] after:w-[2.3rem] after:cursor-pointer after:block after:z-[1] after:transition-all after:duration-[0.2s] after:ease-linear after:left-0 after:top-0 motion-reduce:after:transition-none after:font-Unicons"
+          >
+            <svg
+              class="progress-circle svg-content"
+              width="100%"
+              height="100%"
+              viewBox="-1 -1 102 102"
+            >
+              <path
+                class="fill-none stroke-[#3f78e0] stroke-[4] box-border transition-all duration-[0.2s] ease-linear motion-reduce:transition-none"
+                d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function showCurrent() {
+        allRoles.style.display = "none";
+        currentRole.style.display = "block";
+        currentRole.scrollIntoView({ behavior: "smooth" });
+      }
+      function showAllRoles() {
+        currentRole.style.display = "none";
+        allRoles.style.display = "block";
+        allRoles.scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/theme.js"></script>
+  </body>
+</html>
