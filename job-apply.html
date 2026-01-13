@@ -109,6 +109,9 @@
         .phone-row {
           flex-direction: column;
         }
+        .no-spin{
+          display: none;
+        }
 
         .phone-row select,
         .phone-row input {
@@ -666,7 +669,7 @@
           <p class="error" id="error"></p>
         </form>
         <div
-          class="progress-wrap fixed w-[2.3rem] h-[2.3rem] cursor-pointer block shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010] translate-y-3 transition-all duration-[0.2s] ease-[linear,margin-right] delay-[0s] rounded-[100%] right-6 bottom-6 motion-reduce:transition-none after:absolute after:content-['\e951'] after:text-center after:leading-[2.3rem] after:text-[1.2rem] after:!text-[#3f78e0] after:h-[2.3rem] after:w-[2.3rem] after:cursor-pointer after:block after:z-[1] after:transition-all after:duration-[0.2s] after:ease-linear after:left-0 after:top-0 motion-reduce:after:transition-none after:font-Unicons"
+          class="progress-wrap fixed w-[2.3rem] h-[2.3rem] cursor-pointer block shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010] translate-y-3 transition-all duration-[0.2s] ease-[linear,margin-right] delay-[0s] rounded-[100%] right-6 bottom-6 motion-reduce:transition-none after:absolute after:content-['\e951'] after:text-center after:leading-[2.3rem] after:text-[1.2rem] after:!text-[#3f78e0] after:h-[2.3rem] after:w-[2.3rem] after:cursor-pointer after:block after:z-[1] after:transition-all after:duration-[0.2s] after:ease-linear after:left-0 after:top-0 motion-reduce:after:transition-none after:font-Unicons no-spin"
         >
           <svg
             class="progress-circle svg-content"
@@ -803,7 +806,7 @@
       const jobData = {
         java: {
           title: "Java Engineers",
-          meta: "1–9 Years · Full Time · Chennai / Remote",
+          meta: "Full Time · Chennai / Remote",
           overview:
             "As a Java Developer at Trisentrix, you will work on large-scale enterprise and banking platforms, contributing to the design, development, and integration of secure backend systems used by global financial institutions.",
           skills: [
@@ -818,7 +821,7 @@
         },
         ml: {
           title: "Machine Learning Engineer",
-          meta: "2–7 Years · Full Time · Remote",
+          meta: "Full Time · Remote",
           overview:
             "You will design, build, and deploy scalable machine learning solutions that power intelligent, data-driven platforms across multiple business domains.",
           skills: [
@@ -832,7 +835,7 @@
         },
         cloud: {
           title: "Cloud Solutions Architect",
-          meta: "5–10 Years · Full Time · Chennai / Remote",
+          meta: "Full Time · Chennai / Remote",
           overview:
             "Responsible for designing and implementing secure, scalable cloud architectures that support enterprise-grade applications and services.",
           skills: [
@@ -846,7 +849,7 @@
         },
         devops: {
           title: "DevOps Engineer",
-          meta: "3–8 Years · Full Time · Chennai / Remote",
+          meta: "Full Time · Chennai / Remote",
           overview:
             "You will automate, monitor, and optimize deployment pipelines while ensuring reliability and scalability of production systems.",
           skills: [
@@ -860,7 +863,7 @@
         },
         fsd: {
           title: "Full Stack Developer",
-          meta: "2–6 Years · Full Time · Chennai / Remote",
+          meta: "Years · Full Time · Chennai / Remote",
           overview:
             "Develop end-to-end web applications with modern frontend frameworks and robust backend services.",
           skills: [
@@ -874,7 +877,7 @@
         },
         iot: {
           title: "IoT Engineer",
-          meta: "2–7 Years · Full Time · Chennai / Remote",
+          meta: "Years · Full Time · Chennai / Remote",
           overview:
             "Design and develop secure, scalable IoT solutions connecting devices, platforms, and cloud services.",
           skills: [
