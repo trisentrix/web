@@ -320,7 +320,8 @@
 
       /* ================= HERO ================= */
       .hero {
-        min-height: 55vh;
+        min-height: auto;
+        padding: 70px 20px 50px; 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -495,9 +496,9 @@
         display: none;
       }
       .progress-wrap {
-        right: 12px !important;
-        bottom: 12px !important;
-        max-width: 48px;
+        right: 24px !important;
+        bottom: 24px !important;
+        transform: translateY(0) !important;
       }
 
       /* When loading */
@@ -560,6 +561,19 @@
             right: 8px !important;
             bottom: 8px !important;
             transform: none !important;
+          }
+        }
+        /* Hide scroll-to-top arrow initially */
+        .progress-wrap {
+          opacity: 0 !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+        }
+
+        /* Never show arrow on mobile */
+        @media (max-width: 768px) {
+          .progress-wrap {
+            display: none !important;
           }
         }
       }
@@ -740,9 +754,9 @@
         <div class="feature-text">
           <h3>Real Projects</h3>
           <p>
-            Interns actively contribute to live client projects, gaining
-            exposure to real development cycles, modern tools, and industry
-            standards.
+            Work on live client projects that reflect real-world business challenges.
+            Gain hands-on experience with modern tools, frameworks, and development workflows.
+            Build practical skills by contributing to production-ready systems.
           </p>
         </div>
         <img
@@ -761,8 +775,9 @@
         <div class="feature-text">
           <h3>Mentorship</h3>
           <p>
-            Work closely with experienced mentors who provide technical guidance
-            and professional insight throughout your internship journey.
+            Learn directly from experienced engineers and industry professionals.
+              Receive continuous technical guidance, feedback, and best-practice insights.
+              Grow with support that accelerates both learning and confidence.
           </p>
         </div>
       </div>
@@ -771,8 +786,9 @@
         <div class="feature-text">
           <h3>Growth Pathways</h3>
           <p>
-            Develop technical depth, leadership confidence, and collaboration
-            skills that prepare you for long-term success.
+            Strengthen your technical expertise and problem-solving abilities.
+            Develop leadership, collaboration, and professional communication skills.
+            Prepare for long-term career success in a dynamic technology environment.
           </p>
         </div>
         <img
@@ -1108,8 +1124,73 @@
         reader.readAsDataURL(file);
       }
     </script>
+    <script>
+      const progressWrap = document.querySelector(".progress-wrap");
+
+      if (progressWrap) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 200) {
+            progressWrap.style.opacity = "1";
+            progressWrap.style.visibility = "visible";
+            progressWrap.style.pointerEvents = "auto";
+          } else {
+            progressWrap.style.opacity = "0";
+            progressWrap.style.visibility = "hidden";
+            progressWrap.style.pointerEvents = "none";
+          }
+        });
+      }
+    </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const progressWrap = document.querySelector(".progress-wrap");
+
+    if (!progressWrap) return;
+
+    // Force hide on load
+    progressWrap.style.opacity = "0";
+    progressWrap.style.visibility = "hidden";
+    progressWrap.style.pointerEvents = "none";
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        progressWrap.style.opacity = "1";
+        progressWrap.style.visibility = "visible";
+        progressWrap.style.pointerEvents = "auto";
+      } else {
+        progressWrap.style.opacity = "0";
+        progressWrap.style.visibility = "hidden";
+        progressWrap.style.pointerEvents = "none";
+      }
+    });
+  });
+</script>
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/theme.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const progressWrap = document.querySelector(".progress-wrap");
+
+        if (!progressWrap) return;
+
+        // Hide on load
+        progressWrap.style.opacity = "0";
+        progressWrap.style.visibility = "hidden";
+        progressWrap.style.pointerEvents = "none";
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 200) {
+            progressWrap.style.opacity = "1";
+            progressWrap.style.visibility = "visible";
+            progressWrap.style.pointerEvents = "auto";
+          } else {
+            progressWrap.style.opacity = "0";
+            progressWrap.style.visibility = "hidden";
+            progressWrap.style.pointerEvents = "none";
+          }
+        });
+      }); 
+    </script>
   </body>
 </html>
