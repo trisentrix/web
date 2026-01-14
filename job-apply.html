@@ -452,6 +452,19 @@
         @media (max-width: 768px) {
         }
       }
+      /* Scroll-to-top arrow alignment */
+      .progress-wrap {
+        right: 24px !important;
+        bottom: 24px !important;
+        transform: translateY(0) !important;
+      }
+
+      /* Disable arrow on mobile */
+      @media (max-width: 768px) {
+        .progress-wrap {
+          display: none !important;
+        }
+      }
     </style>
   </head>
 
@@ -819,6 +832,20 @@
             "Familiarity with authentication protocols like OAuth2, JWT, and banking standards",
           ],
         },
+        technicalwriter: {
+          title: "Technical Writer",
+          meta: "Full Time · Chennai",
+          overview:
+            "The ideal candidate has excellent communication skills and a strong technical background that enables effective collaboration with Software Engineers, Solution Architects, Product Managers, and Technical Program Managers while delivering high-quality technical documentation.",
+          skills: [
+            "Excellent written and verbal communication skills in English (first-language proficiency level)",
+            "Ability to structure complex content and explain it clearly in a concise and precise written form",
+            "Proactive approach to information gathering and problem-solving",
+            "At least 2 years of professional experience in technical writing",
+            "Preferably experienced in the software technical writing domain",
+            "Experience in creating, structuring, and maintaining content for software-related products",
+          ],
+        },
         ml: {
           title: "Machine Learning Engineer",
           meta: "Full Time · Remote",
@@ -985,5 +1012,29 @@
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const progressWrap = document.querySelector(".progress-wrap");
+
+        if (!progressWrap) return;
+
+        // Force hide on load
+        progressWrap.style.opacity = "0";
+        progressWrap.style.visibility = "hidden";
+        progressWrap.style.pointerEvents = "none";
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 200) {
+            progressWrap.style.opacity = "1";
+            progressWrap.style.visibility = "visible";
+            progressWrap.style.pointerEvents = "auto";
+          } else {
+            progressWrap.style.opacity = "0";
+            progressWrap.style.visibility = "hidden";
+            progressWrap.style.pointerEvents = "none";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
