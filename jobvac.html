@@ -286,7 +286,7 @@
                 >
               </li>
               <li class="nav-item xl:!hidden lg:!hidden">
-                <button class="hamburger offcanvas-nav-btn">
+                <button type="button" class="hamburger offcanvas-nav-btn" aria-label="Toggle navigation menu">
                   <span></span>
                 </button>
               </li>
@@ -339,7 +339,7 @@
     <!-- MAIN BOXES (UNTOUCHED) -->
     <section class="box-grid">
       <div class="main-box" onclick="showCurrent()">
-        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" />
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" alt="Current hiring opportunities at Trisentrix" />
         <div class="content">
           <h3>Current Hiring</h3>
           <p>
@@ -352,6 +352,7 @@
       <div class="main-box" onclick="location.href='Internship-Page.html'">
         <img
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+          alt="Internship programs at Trisentrix"
         />
         <div class="content">
           <h3>Internships</h3>
@@ -362,6 +363,7 @@
       <div class="main-box" onclick="showAllRoles()">
         <img
           src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+          alt="All-time career roles at Trisentrix"
         />
         <div class="content">
           <h3>All-Time Roles</h3>
@@ -394,6 +396,56 @@
           <p>
             Create, structure, and maintain high-quality technical documentation for
             software products and engineering teams.
+          </p>
+        </div>
+        <div
+          class="role-card"
+          onclick="location.href='job-apply.html?role=project-manager'"
+        >
+          <h4>Project Manager</h4>
+          <p>
+            Manage end-to-end banking and fintech projects, ensuring on-time delivery,
+            stakeholder alignment, and successful digital transformation.
+          </p>
+        </div>
+        <div
+          class="role-card"
+          onclick="location.href='job-apply.html?role=test-lead'"
+        >
+          <h4>Test Lead</h4>
+          <p>
+            Lead quality assurance initiatives for banking and fintech platforms,
+            driving test strategy, defect management, and team coordination.
+          </p>
+        </div>
+        <div
+          class="role-card"
+          onclick="location.href='job-apply.html?role=java-team-lead'"
+        >
+          <h4>Java Team Lead</h4>
+          <p>
+            Lead and mentor backend teams to build scalable microservices using Java,
+            Spring Boot, and cloud-native architectures.
+          </p>
+        </div>
+        <div
+          class="role-card"
+          onclick="location.href='job-apply.html?role=senior-java-developer'"
+        >
+          <h4>Senior Java Developer</h4>
+          <p>
+            Develop secure and high-performance backend services for banking platforms
+            using Java, Spring Boot, and microservices.
+          </p>
+        </div>
+        <div
+          class="role-card"
+          onclick="location.href='Internship-Page.html?track=ai-ds'"
+        >
+          <h4>AI & Data Science Intern</h4>
+          <p>
+            Work on real-world AI and data science projects under the guidance of
+            experienced engineers and researchers.
           </p>
         </div>
       </div>

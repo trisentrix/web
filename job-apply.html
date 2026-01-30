@@ -591,7 +591,7 @@
                 >
               </li>
               <li class="nav-item xl:!hidden lg:!hidden">
-                <button class="hamburger offcanvas-nav-btn">
+                < button class="hamburger offcanvas-nav-btn">
                   <span></span>
                 </button>
               </li>
@@ -637,7 +637,7 @@
             <div class="form-group">
               <label for="phone">Phone Number</label>
               <div class="phone-row">
-                <select id="countryCode"></select>
+                <select id="countryCode" aria-label="Country Code"></select>
                 <input
                   id="phone"
                   type="tel"
@@ -916,10 +916,74 @@
             "Monitoring, diagnostics, and lifecycle management",
           ],
         },
+        projectManager: {
+          title: "Project Manager",
+          meta: "Full Time · Chennai",
+          overview:
+            "You will manage end-to-end delivery of banking and fintech projects, ensuring timely execution, stakeholder alignment, and successful implementation of digital transformation initiatives.",
+          skills: [
+            "7+ years of experience in project management within banking, fintech, or digital transformation",
+            "Hands-on experience managing end-to-end project lifecycle including planning, execution, risk management, and delivery",
+            "Strong knowledge of core banking, retail/corporate banking, payments, loans, or digital platforms",
+            "Experience with Agile, Scrum, and Waterfall methodologies",
+            "Ability to manage cross-functional teams including development, testing, compliance, and business stakeholders",
+            "Domain expertise in CBS platforms such as T24, Cortex, or TCS BaNCS",
+            "Proven track record of delivering projects on time, within scope, and budget"
+          ]
+        },
+        testLead: {
+          title: "Test Lead",
+          meta: "Full Time · Chennai",
+          overview:
+            "You will lead quality assurance efforts for banking and fintech applications, managing test teams and ensuring high-quality delivery across core banking and digital platforms.",
+          skills: [
+            "6+ years of experience in software testing with a strong banking or fintech background",
+            "Hands-on experience with T24, Cortex, TCS BaNCS, mobile banking, loans, and cards",
+            "Expertise in SIT, UAT, API testing using Postman, and database testing",
+            "Strong defect management experience using JIRA or HP-ALM",
+            "Experience leading Agile testing teams with 4+ members",
+            "Ability to coordinate closely with development and business teams",
+            "Strong understanding of QA processes and test strategy planning"
+          ]
+        },
+        javaTeamLead: {
+          title: "Java Team Lead",
+          meta: "Full Time · Chennai",
+          overview:
+            "You will lead backend engineering teams in building scalable, secure microservices-based banking solutions using modern Java and cloud-ready architectures.",
+          skills: [
+            "7+ years of experience in Java backend development",
+            "Strong expertise in Core Java (8+), Spring Boot, Microservices, and RESTful APIs",
+            "Experience with Spring Cloud, JPA/Hibernate, and backend system architecture",
+            "Hands-on experience leading design, development, and code reviews",
+            "Mentoring teams of 4–8 engineers and managing Agile delivery",
+            "Experience with CI/CD tools such as Git and Jenkins",
+            "Knowledge of Kafka, JUnit, Postman, and Swagger",
+            "Banking domain knowledge including payments, loans, cards, and core banking integrations"
+          ]
+        },
+        seniorJavaDeveloper: {
+          title: "Senior Java Developer",
+          meta: "Full Time · Chennai",
+          overview:
+            "You will develop and maintain scalable backend services for banking and fintech platforms, contributing to secure, high-performance enterprise applications.",
+          skills: [
+            "4+ years of experience in Java backend development",
+            "Strong expertise in Core Java (8+), Spring Boot, Microservices, and REST APIs",
+            "Experience with Spring Security, Spring Cloud, and JPA/Hibernate",
+            "Hands-on experience building secure and scalable banking backend systems",
+            "Knowledge of CI/CD pipelines using Jenkins and Git",
+            "Experience with unit testing using JUnit and debugging production issues",
+            "Familiarity with event-driven architecture and Kafka (nice to have)",
+            "Domain knowledge in core banking systems such as T24, Cortex, or TCS BaNCS"
+          ]
+        },
       };
 
-      const role = new URLSearchParams(location.search).get("role") || "java";
-      const job = jobData[role];
+      const rawRole = new URLSearchParams(location.search).get("role") || "java";
+      // convert hyphenated roles from jobvac links to camelCase keys used in jobData
+      const role = rawRole.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+      const job = jobData[role] || jobData[rawRole] || jobData["java"];
 
       jobTitle.textContent = job.title;
       jobMeta.textContent = job.meta;
