@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -109,7 +109,7 @@
         .phone-row {
           flex-direction: column;
         }
-        .no-spin{
+        .no-spin {
           display: none;
         }
 
@@ -465,6 +465,19 @@
           display: none !important;
         }
       }
+
+      /* ================= MATCH CAREER PAGE STICKY NAV ================= */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1020; /* same layer as career page */
+        background: #ffffff;
+      }
+
+      /* subtle shadow after scroll (same UX feel) */
+      header.is-sticky {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      }
     </style>
   </head>
 
@@ -591,7 +604,7 @@
                 >
               </li>
               <li class="nav-item xl:!hidden lg:!hidden">
-                < button class="hamburger offcanvas-nav-btn">
+                <button class="hamburger offcanvas-nav-btn" title="hamburger">
                   <span></span>
                 </button>
               </li>
@@ -650,7 +663,7 @@
               </div>
             </div>
 
-            <div class="form-group  ">
+            <div class="form-group">
               <label for="experience">Experience</label>
               <select id="experience" required>
                 <option value="">Select Experience *</option>
@@ -928,8 +941,8 @@
             "Experience with Agile, Scrum, and Waterfall methodologies",
             "Ability to manage cross-functional teams including development, testing, compliance, and business stakeholders",
             "Domain expertise in CBS platforms such as T24, Cortex, or TCS BaNCS",
-            "Proven track record of delivering projects on time, within scope, and budget"
-          ]
+            "Proven track record of delivering projects on time, within scope, and budget",
+          ],
         },
         testLead: {
           title: "Test Lead",
@@ -943,8 +956,8 @@
             "Strong defect management experience using JIRA or HP-ALM",
             "Experience leading Agile testing teams with 4+ members",
             "Ability to coordinate closely with development and business teams",
-            "Strong understanding of QA processes and test strategy planning"
-          ]
+            "Strong understanding of QA processes and test strategy planning",
+          ],
         },
         javaTeamLead: {
           title: "Java Team Lead",
@@ -959,8 +972,8 @@
             "Mentoring teams of 4–8 engineers and managing Agile delivery",
             "Experience with CI/CD tools such as Git and Jenkins",
             "Knowledge of Kafka, JUnit, Postman, and Swagger",
-            "Banking domain knowledge including payments, loans, cards, and core banking integrations"
-          ]
+            "Banking domain knowledge including payments, loans, cards, and core banking integrations",
+          ],
         },
         seniorJavaDeveloper: {
           title: "Senior Java Developer",
@@ -975,8 +988,8 @@
             "Knowledge of CI/CD pipelines using Jenkins and Git",
             "Experience with unit testing using JUnit and debugging production issues",
             "Familiarity with event-driven architecture and Kafka (nice to have)",
-            "Domain knowledge in core banking systems such as T24, Cortex, or TCS BaNCS"
-          ]
+            "Domain knowledge in core banking systems such as T24, Cortex, or TCS BaNCS",
+          ],
         },
         businessAnalyst: {
           title: "Business Analyst",
@@ -994,8 +1007,8 @@
             "Exposure to core banking systems like T24, Finacle, TCS BaNCS, or Cortex (nice to have)",
             "Basic knowledge of data analytics tools (Power BI, Excel advanced functions)",
             "Understanding of regulatory requirements such as RBI guidelines, KYC/AML, and PCI-DSS",
-            "Experience with payments gateways, digital onboarding, or lending LOS (nice to have)"
-          ]
+            "Experience with payments gateways, digital onboarding, or lending LOS (nice to have)",
+          ],
         },
         reactJsDeveloper: {
           title: "React.js Developer",
@@ -1014,12 +1027,13 @@
             "Familiarity with Agile development practices, code reviews, and CI/CD pipelines",
             "Experience with Next.js (SSR/SSG), performance optimization, and accessibility standards (nice to have)",
             "Understanding of fintech domain concepts such as digital banking, UPI, and core banking integrations (nice to have)",
-            "Experience with WebSockets or event-driven UI architectures (nice to have)"
-          ]
+            "Experience with WebSockets or event-driven UI architectures (nice to have)",
+          ],
         },
       };
 
-      const rawRole = new URLSearchParams(location.search).get("role") || "java";
+      const rawRole =
+        new URLSearchParams(location.search).get("role") || "java";
       // convert hyphenated roles from jobvac links to camelCase keys used in jobData
       const role = rawRole.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
       const job = jobData[role] || jobData[rawRole] || jobData["java"];
@@ -1137,6 +1151,15 @@
             progressWrap.style.pointerEvents = "none";
           }
         });
+      });
+      const header = document.querySelector("header");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+          header.classList.add("is-sticky");
+        } else {
+          header.classList.remove("is-sticky");
+        }
       });
     </script>
   </body>
