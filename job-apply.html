@@ -845,20 +845,64 @@
             "Familiarity with authentication protocols like OAuth2, JWT, and banking standards",
           ],
         },
-        technicalwriter: {
-          title: "Technical Writer",
-          meta: "Full Time · Chennai",
+        aiSolutionsArchitect: {
+          title: "AI Solutions Architect (BFSI / FinTech)",
+          meta: "Full Time · Immediate / Short notice preferred",
           overview:
-            "The ideal candidate has excellent communication skills and a strong technical background that enables effective collaboration with Software Engineers, Solution Architects, Product Managers, and Technical Program Managers while delivering high-quality technical documentation.",
+            "We are actively seeking a highly skilled and hands-on AI Solutions Architect with extensive, recent experience in building and deploying production-grade, enterprise-scale AI systems within the Banking, Financial Services, and Insurance (BFSI), FinTech, ERP, or other data-intensive domains. This is a critical, execution-focused role. It is neither a pure research position nor solely a prompt-engineering function. The ideal candidate will architect robust, end-to-end AI-enabled systems, make strategic decisions on technology application, and provide active technical leadership and mentorship to junior AI engineers to ensure the delivery of reliable, scalable, and production-ready solutions.",
+
           skills: [
-            "Excellent written and verbal communication skills in English (first-language proficiency level)",
-            "Ability to structure complex content and explain it clearly in a concise and precise written form",
-            "Proactive approach to information gathering and problem-solving",
-            "At least 2 years of professional experience in technical writing",
-            "Preferably experienced in the software technical writing domain",
-            "Experience in creating, structuring, and maintaining content for software-related products",
+
+            "<span class='job-subheading'>1. End-to-End Solution Architecture & Design</span>",
+            "Design scalable, resilient, and secure architectures for AI-enabled platforms tailored to the BFSI and FinTech sectors.",
+            "Define clear architectural boundaries and integration strategies between AI/ML components, deterministic/rule-based logic, core data pipelines, and existing domain services.",
+            "Ensure all designs are inherently production-ready, moving beyond Proofs of Concept (PoCs) to robust operational systems.",
+            "Develop phased delivery architectures, defining Minimal Viable Products (MVPs) and incremental rollout plans.",
+
+            "<span class='job-subheading'>2. AI Strategy, Governance, and Risk Management</span>",
+            "Provide strategic guidance on the application of AI for key financial use cases, including forecasting, anomaly detection, risk indicators, and personalized insights/recommendations.",
+            "Determine the optimal use of AI versus traditional rule-based systems and heuristics based on performance, cost, and complexity trade-offs.",
+            "Define rigorous evaluation metrics, guardrails, fallback mechanisms, and monitoring protocols.",
+            "Ensure all AI solutions meet strict financial regulatory requirements for explainability (XAI), auditability, correctness, and compliance.",
+
+            "<span class='job-subheading'>3. Data Alignment and Financial Domain Expertise</span>",
+            "Work extensively with complex and often messy real-world financial datasets, such as cash flows, Accounts Receivable/Payable (AR/AP) data, reconciliation data, and financial Key Performance Indicators (KPIs).",
+            "Proactively identify data dependencies, quality gaps, and potential risks early in the project lifecycle.",
+            "Validate that AI outputs and models align precisely with financial and operational realities and business rules.",
+
+            "<span class='job-subheading'>4. Technical Leadership and Mentorship</span>",
+            "Act as a technical leader and mentor for junior AI engineers, fostering a culture of engineering excellence.",
+            "Conduct thorough reviews of solution designs, code, and architectural approaches.",
+            "Translate vague business requirements into concrete, implementable technical tasks and clear user stories.",
+            "Elevate the overall software engineering quality within the team without resorting to micromanagement.",
+
+            "<span class='job-subheading'>5. Production Readiness & MLOps</span>",
+            "Architect systems with comprehensive production readiness features, including robust logging, monitoring (model drift, data quality), error handling, and auditability.",
+            "Support the seamless transition of models and systems from development/staging environments into live production operations.",
+
+            "<span class='job-subheading'>6. Mandatory Requirements (Required Qualifications)</span>",
+            "Profiles without the following experience will not be considered:",
+            "Experience: 4–6 years of total experience in AI/ML, data engineering, or platform engineering.",
+            "Production Delivery: Recent, verifiable hands-on experience in successfully delivering and owning production-grade AI systems in a corporate environment.",
+            "Technical Depth: Strong foundational understanding of data pipelines, the complete Machine Learning lifecycle (MLOps), API design, and complex system integration.",
+            "Leadership: Proven experience working effectively with and guiding junior or early-career engineering teams.",
+            "Bridging the Gap: Demonstrated ability to translate abstract business requirements into concrete, actionable technical architecture and engineering plans.",
+
+            "<span class='job-subheading'>7. Strongly Preferred Qualifications</span>",
+            "Domain Expertise: Prior experience within the BFSI, FinTech, ERP, payments, treasury, or analytics platform sectors.",
+            "Data Handling: Specific experience handling messy, real-world, high-stakes financial data.",
+            "Environment: Experience within a startup or product-based company environment (fast-paced, agile).",
+            "Cloud Proficiency: Hands-on cloud deployment exposure with major platforms (AWS / Azure / GCP).",
+
+            "<span class='job-subheading'>8. Not a Fit If the Candidate</span>",
+            "Is only a research or academic ML profile.",
+            "Has worked exclusively on PoCs, experiments, or hackathons.",
+            "Focuses mainly on prompt engineering or conversational AI chatbots without broader system architecture experience.",
+            "Has not built, deployed, or owned production systems in a professional capacity.",
+            "Is seeking a people-management-only or non-technical leadership role."
           ],
         },
+
         ml: {
           title: "Machine Learning Engineer",
           meta: "Full Time · Remote",
@@ -1041,7 +1085,11 @@
       jobTitle.textContent = job.title;
       jobMeta.textContent = job.meta;
       jobOverview.textContent = job.overview;
-      jobSkills.innerHTML = job.skills.map((s) => `<li>${s}</li>`).join("");
+      jobSkills.innerHTML = job.skills.map((s) =>
+        s.includes("job-subheading")
+          ? `<li style="list-style:none; margin-left:-20px; font-weight:bold; color:#0b3d91; font-size:18px; margin-top:18px;">${s}</li>`
+          : `<li>${s}</li>`
+      ).join("");
 
       const WEB_APP_URL =
         "https://script.google.com/macros/s/AKfycbzk6Tzf69MbE9hqeQPKuGxZ0BGJ0ADGUohJmm-0vyK0hRpGXs6XqmOi18bSojVyeXyniA/exec";
