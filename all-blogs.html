@@ -893,36 +893,35 @@
   </body>
 
   <script>
-
-    const isGitHubPages = window.location.hostname.includes("github.io");
-    const repoName = "automation-website-";
+    const isGitHubPages = window.location.hostname.endsWith("github.io");
+    const repoName = "web";
     const basePath = isGitHubPages ? `/${repoName}` : "";
 
-        const bgColors = [
-          "#f4f7fe",
-          "#eefaf5",
-          "#fff7ed",
-          "#fef2f2",
-          "#f0f9ff",
-          "#f5f3ff",
-          "#ecfeff",
-          "#f7fee7",
-          "#fff1f2",
-          "#f8fafc",
-          "#fdf4ff",
-          "#fefce8",
-          "#eff6ff",
-          "#ecfdf5",
-          "#faf5ff",
-        ];
+    const bgColors = [
+      "#f4f7fe",
+      "#eefaf5",
+      "#fff7ed",
+      "#fef2f2",
+      "#f0f9ff",
+      "#f5f3ff",
+      "#ecfeff",
+      "#f7fee7",
+      "#fff1f2",
+      "#f8fafc",
+      "#fdf4ff",
+      "#fefce8",
+      "#eff6ff",
+      "#ecfdf5",
+      "#faf5ff",
+    ];
 
-        const BLOGS_PER_PAGE = 6;
+    const BLOGS_PER_PAGE = 6;
 
-        // current page from URL (?page=2)
-        const page =
-          parseInt(new URLSearchParams(window.location.search).get("page")) || 1;
+    // current page from URL (?page=2)
+    const page =
+      parseInt(new URLSearchParams(window.location.search).get("page")) || 1;
 
-        let allBlogs = [];
+    let allBlogs = [];
 
     fetch(`${basePath}/blogs-data/index.json`)
       .then((res) => res.json())
@@ -974,11 +973,15 @@
       const totalPages = Math.ceil(blogs.length / BLOGS_PER_PAGE);
       pagination.innerHTML = "";
 
-      if (page > 1) pagination.innerHTML += `<a href="?page=${page - 1}" class="page-link">← Prev</a>`;
-      if (page - 1 >= 1) pagination.innerHTML += `<a href="?page=${page - 1}" class="page-link">${page - 1}</a>`;
+      if (page > 1)
+        pagination.innerHTML += `<a href="?page=${page - 1}" class="page-link">← Prev</a>`;
+      if (page - 1 >= 1)
+        pagination.innerHTML += `<a href="?page=${page - 1}" class="page-link">${page - 1}</a>`;
       pagination.innerHTML += `<a href="?page=${page}" class="page-link active">${page}</a>`;
-      if (page + 1 <= totalPages) pagination.innerHTML += `<a href="?page=${page + 1}" class="page-link">${page + 1}</a>`;
-      if (page < totalPages) pagination.innerHTML += `<a href="?page=${page + 1}" class="page-link">Next →</a>`;
+      if (page + 1 <= totalPages)
+        pagination.innerHTML += `<a href="?page=${page + 1}" class="page-link">${page + 1}</a>`;
+      if (page < totalPages)
+        pagination.innerHTML += `<a href="?page=${page + 1}" class="page-link">Next →</a>`;
     }
 
     function setupSearch() {
@@ -988,7 +991,7 @@
         const query = e.target.value.toLowerCase();
 
         const filtered = allBlogs.filter((blog) =>
-          blog.title.toLowerCase().includes(query)
+          blog.title.toLowerCase().includes(query),
         );
 
         renderBlogs(filtered);
