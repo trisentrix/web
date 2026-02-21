@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trisentrix Layout</title>
+
+<!-- REQUIRED GLOBAL CSS -->
+<link rel="shortcut icon" href="./assets/img/favicon.png">
+<link rel="stylesheet" href="./assets/fonts/unicons/unicons.css">
+<link rel="stylesheet" href="./assets/css/plugins.css">
+<link rel="stylesheet" href="./style.css">
+
+<!-- HEADER + FOOTER CSS -->
+<style>
+/* Button override */
+.btn.btn-primary,
+.input-group .btn,
+.newsletter-wrapper .btn {
+  background: #3f78e0 !important;
+  color: #ffffff !important;
+  border-color: #3f78e0 !important;
+}
+
+.btn.btn-primary:hover,
+.input-group .btn:hover {
+  background: #3564c7 !important;
+  color: #ffffff !important;
+}
+
+/* Footer background safety */
+footer {
+  background: #21262c;
+}
+footer a {
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+<nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+  <div class="container xl:!flex-row lg:!flex-row !flex-nowrap items-center">
+
+    <div class="navbar-brand w-full">
+      <a href="./index.html">
+        <img src="./assets/img/trise/logo.png"
+             srcset="./assets/img/trise/logo.png 2x"
+             alt="Trisentrix"
+             width="220">
+      </a>
+    </div>
+
+    <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+      <div class="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between p-6">
+        <h3 class="!text-white !mb-0">Trisentrix</h3>
+        <button type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+      </div>
+
+      <div class="offcanvas-body xl:!ml-auto lg:!ml-auto flex flex-col !h-full">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Our Blogs</a></li>
+        </ul>
+
+        <div class="offcanvas-footer xl:!hidden lg:!hidden">
+          <a href="mailto:contactus@trisentrix.com" class="link-inverse">
+            contactus@trisentrix.com
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-other w-full !flex !ml-auto">
+      <ul class="navbar-nav !flex-row !items-center !ml-auto">
+        <li class="nav-item hidden xl:block lg:block md:block">
+          <a href="./contact.html"
+             class="btn btn-sm btn-primary !rounded-[50rem]">
+            Contact
+          </a>
+        </li>
+        <li class="nav-item xl:!hidden lg:!hidden">
+          <button class="hamburger offcanvas-nav-btn"
+                  aria-label="Open navigation menu">
+            <span></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+</header>
+<!-- ================= END HEADER ================= -->
+
+
+<!-- ================= PAGE CONTENT GOES HERE ================= -->
+<main style="min-height:60vh;"></main>
+<!-- ========================================================== -->
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="shrink-0">
+  <div class="container py-16 xl:!py-20 lg:!py-20 md:!py-20">
+    <div class="flex flex-wrap mx-[-15px] !mt-[-30px]">
+
+      <div class="md:w-4/12 xl:w-3/12 !px-[15px] !mt-[30px]">
+        <img src="./assets/img/trise/logo.png"
+             srcset="./assets/img/trise/logo.png 2x"
+             width="180"
+             alt="Trisentrix"
+             class="!mb-4">
+
+        <ul class="pl-0 list-none">
+          <li><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#">Privacy Policy</a></li>
+          <li class="!mt-1"><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#">Terms of Use</a></li>
+        </ul>
+
+        <p class="!mt-5 !text-[#cacaca]">
+          © 2025 Trisentrix.<br>All rights reserved.
+        </p>
+      </div>
+
+      <div class="md:w-4/12 xl:w-3/12 !px-[15px] !mt-[30px]">
+        <h4 class="!text-white !mb-3">Get in Touch</h4>
+        <address class="not-italic !text-[#cacaca]">
+          715-A, 7th Floor, Spenser Plaza,<br>
+          Mount Road, Chennai - 600002.
+        </address>
+        <a href="mailto:contactus@trisentrix.com"
+           class="!text-[#cacaca] hover:!text-[#3f78e0]">
+          contactus@trisentrix.com
+        </a>
+      </div>
+
+      <div class="md:w-4/12 xl:w-3/12 !px-[15px] !mt-[30px]">
+        <h4 class="!text-white !mb-3">Learn More</h4>
+        <ul class="pl-0 list-none">
+          <li><a href="about.html" class="!text-[#cacaca] hover:!text-[#3f78e0]">About Us</a></li>
+          <li><a href="services.html" class="!text-[#cacaca] hover:!text-[#3f78e0]">Services</a></li>
+          <li><a href="product.html" class="!text-[#cacaca] hover:!text-[#3f78e0]">Products</a></li>
+          <li><a href="career.html" class="!text-[#cacaca] hover:!text-[#3f78e0]">Careers</a></li>
+          <li><a href="blogs.html" class="!text-[#cacaca] hover:!text-[#3f78e0]">Our Blogs</a></li>
+        </ul>
+      </div>
+
+      <div class="md:w-full xl:w-3/12 !px-[15px] !mt-[30px]">
+        <h4 class="!text-white !mb-3">Our Newsletter</h4>
+        <p class="!text-[#cacaca]">Subscribe to our newsletter.</p>
+
+        <div class="newsletter-wrapper">
+          <input type="email" class="form-control" placeholder="Email Address">
+          <button class="btn btn-primary">Join</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+<!-- ================= END FOOTER ================= -->
+
+
+<!-- REQUIRED GLOBAL JS -->
+<script src="./assets/js/plugins.js"></script>
+<script src="./assets/js/theme.js"></script>
+
+</body>
+</html>
