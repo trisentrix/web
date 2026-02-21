@@ -768,7 +768,7 @@
     setInterval(renderRandomQuotes, 8000);
   }
     const isGitHubPages = window.location.hostname.includes("github.io");
-  const repoName = "automation-website-";  // 👈 your repo name
+  const repoName = "web";  // 👈 your repo name
   const basePath = isGitHubPages ? `/${repoName}` : "";
 
   const bgColors = [
@@ -791,7 +791,7 @@
 
 
 
-  fetch(`./blogs-data/index.json`)
+  fetch(`${basePath}/blogs-data/index.json`)
     .then(res => res.json())
     .then(blogs => {
 
