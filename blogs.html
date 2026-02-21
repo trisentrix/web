@@ -1,0 +1,1016 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Our Blogs | Trisentrix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./assets/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="./assets/fonts/unicons/unicons.css">
+    <link rel="stylesheet" href="./assets/css/plugins.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+      html, body {
+    overflow-x: hidden;
+  }
+      @media (max-width: 768px) {
+    .blogs-wrapper {
+      margin: 60px auto 80px;
+      padding: 0 14px;
+    }
+
+    .featured-title {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .blog-intro h2 {
+      font-size: 22px;
+    }
+
+    .blog-intro p {
+      font-size: 15px;
+    }
+
+    .explore-blogs-btn {
+      padding: 12px 26px;
+      font-size: 15px;
+    }
+  }
+      /* BLOG PAGE ONLY */
+      body {
+        background: #edf2fc;
+      }
+
+      .blogs-wrapper {
+        max-width: 1100px;
+        margin: 90px auto 120px;
+        padding: 0 20px;
+      }
+
+      .blogs-wrapper h1 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 36px;
+        font-weight: 700;
+      }
+
+      .blog-card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      }
+
+      .blog-card img {
+        width: 100%;
+        max-width: 650px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+      }
+
+      .blog-card h3 {
+        margin: 14px 0;
+        font-size: 24px;
+      }
+
+      .blog-card p {
+        color: #475569;
+        line-height: 1.7;
+      }
+
+      .blog-card small {
+        color: #64748b;
+      }
+
+      .blog-card a {
+        display: inline-block;
+        margin-top: 14px;
+        color: #3f78e0;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .blog-card a:hover {
+        text-decoration: underline;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 420px;           /* hero height */
+        overflow: hidden;
+        background: #edf2fc;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;       /* IMPORTANT */
+        object-position: center;
+        display: block;
+      }
+
+      @media (max-width: 768px) {
+        .hero-image {
+          height: 260px;
+        }
+      }
+
+      /* HERO IMAGE OPENING ANIMATION */
+      .hero-image img {
+        animation: heroFadeUp 1.2s ease-out both;
+      }
+      /* ================= HERO IMAGE MOBILE FIX ================= */
+  @media (max-width: 768px) {
+    .hero-image {
+      height: auto;              /* let image decide height */
+      padding: 0;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;             /* prevent crop */
+      object-fit: contain;      /* show full image */
+    }
+  }
+  /* ================= MOBILE TYPOGRAPHY TUNING ================= */
+  @media (max-width: 768px) {
+    .blog-intro h2 {
+      font-size: 20px;
+    }
+
+    .blog-intro p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .featured-title {
+      font-size: 20px;
+    }
+
+    .section-title {
+      font-size: 20px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+      @keyframes heroFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-image img {
+        will-change: transform;
+      }
+
+      /* MAIN FEATURED BLOG */
+      #main-featured-blog {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 70px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      }
+
+      .main-featured-card {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .main-featured-card img {
+        width: 100%;
+        border-radius: 16px;
+      }
+
+      .main-featured-content h2 {
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+
+      .main-featured-content p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #475569;
+      }
+
+      .main-featured-content small {
+        color: #64748b;
+      }
+
+      .main-featured-content a {
+        display: inline-block;
+        margin-top: 16px;
+        font-weight: 600;
+        color: #3f78e0;
+        text-decoration: none;
+      }
+
+      .section-title {
+        font-size: 26px;
+        margin-bottom: 30px;
+      }
+
+      .blog-intro {
+        text-align: center;
+        max-width: 720px;
+        margin: 60px auto 40px;
+        padding: 0 20px;
+      }
+
+      .blog-intro h2 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .blog-intro p {
+        color: #6b7280;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      /* FEATURED READS */
+      .featured-reads {
+        margin-bottom: 70px;
+      }
+
+      #featured-reads-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+      }
+
+      .featured-card {
+        display: flex;                 /* IMPORTANT */
+        gap: 20px;
+        align-items: center;
+
+        border-radius: 18px;
+        padding: 26px;
+        max-width: 720px;
+        transition: transform 0.6s ease, background-color 0.6s ease;
+      }
+
+      .featured-card img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 14px;
+      }
+
+      .featured-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+
+
+      .featured-card p {
+        font-size: 14px;
+        color: #475569;
+      }
+
+      .featured-card small {
+        color: #64748b;
+      }
+
+      .featured-slider {
+        display: flex;
+        justify-content: center;   /* HORIZONTAL CENTER */
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .featured-card {
+        margin: 0 auto;          /* CENTER fallback */
+      }
+
+      /* ===== Featured Layout with Side Quotes (Desktop Only) ===== */
+  .featured-layout {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  /* Quote Card Style */
+  .side-quote {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px 26px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    max-width: 280px;
+    margin: 0 auto;
+    text-align: center;
+    animation: quoteFadeUp 1.2s ease-out both;
+  }
+
+  .quote-text {
+    font-size: 16px;
+    font-style: italic;
+    color: #1f2937;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .quote-author {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3f78e0;
+  }
+
+  /* Subtle animation */
+  @keyframes quoteFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 🔥 Hide quotes on tablets & mobile */
+  @media (max-width: 1024px) {
+    .featured-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .side-quote {
+      display: none;
+    }
+  }
+
+      /* Hide scrollbar */
+      #featured-reads-list::-webkit-scrollbar {
+        display: none;
+      }
+      #featured-reads-list {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .featured-card {
+        flex: 0 0 340px;   /* fixed width */
+        max-width: 340px;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .featured-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+        height: 50px;              /* FIXED */
+        overflow: hidden;
+      }
+
+      .featured-card p {
+        font-size: 14px;
+        color: #475569;
+        line-height: 1.5;
+        height: 60px;              /* FIXED */
+        overflow: hidden;
+      }
+      
+      /* Explore More Blogs Button */
+      .explore-blogs-wrapper {
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .explore-blogs-btn {
+        display: inline-block;
+        padding: 14px 34px;
+        background: #3f78e0;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 16px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .explore-blogs-btn:hover {
+        background: #2f65c8;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(63,120,224,0.3);
+      }
+
+      /* FIX FOOTER FULL WIDTH */
+      .site-footer {
+        width: 100%;
+        background: #21262c;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Footer container stays centered */
+      .site-footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+
+
+      /* WHY READ TRISENTRIX BLOGS */
+      .why-blogs {
+        max-width: 720px;
+        margin: 80px auto 0;
+        text-align: center;
+      }
+
+      .why-blogs h3 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 14px;
+        color: #1f2937;
+      }
+
+      .why-blogs p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #6b7280;
+      }
+
+
+      .site-footer {
+        width: 100%;
+        background: #21262c;
+      }
+
+      .footer-inner {
+        width: 100%;
+      }
+
+      .featured-card img {
+        width: 180px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 12px;
+        flex-shrink: 0;     /* image shrink aagakoodadhu */
+      }
+
+      .featured-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .swipe-left {
+        animation: swipeLeft 0.6s ease;
+      }
+
+      @keyframes swipeLeft {
+        from {
+          opacity: 0;
+          transform: translateX(60px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .featured-title {
+        text-align: center;
+        margin-bottom: 24px;
+        font-size: 26px;
+        font-weight: 600;
+        color: #1f2937;
+      }
+      /* ================= MOBILE FIX: FEATURED BLOG ================= */
+  @media (max-width: 768px) {
+    .main-featured-card {
+      grid-template-columns: 1fr;   /* stack image + text */
+      gap: 20px;
+    }
+
+    .main-featured-card img {
+      width: 100%;
+      max-height: 240px;           /* keep image visible */
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .main-featured-content h2 {
+      font-size: 20px;             /* reduce title size */
+      line-height: 1.35;
+    }
+
+    .main-featured-content small {
+      font-size: 13px;
+    }
+
+    .main-featured-content a {
+      font-size: 14px;
+    }
+
+    #main-featured-blog {
+      padding: 20px;               /* tighter padding */
+    }
+  }
+  /* ================= FINAL MOBILE OVERRIDE FIX ================= */
+  @media (max-width: 768px) {
+
+    /* Stack image + text vertically */
+    .main-featured-card {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px !important;
+    }
+
+    /* Ensure image is visible */
+    .main-featured-card img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 220px !important;
+      object-fit: contain !important;
+      border-radius: 12px !important;
+    }
+
+    /* Reduce title size */
+    .main-featured-content h2 {
+      font-size: 18px !important;
+      line-height: 1.3 !important;
+    }
+
+    .main-featured-content small {
+      font-size: 12px !important;
+    }
+
+    .main-featured-content a {
+      font-size: 14px !important;
+    }
+
+    /* Reduce card padding */
+    #main-featured-blog {
+      padding: 16px !important;
+    }
+
+    /* Reduce intro text so image is not pushed down */
+    .blog-intro h2 {
+      font-size: 18px !important;
+    }
+
+    .blog-intro p {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+    }
+
+    /* Hero image fix */
+    .hero-image {
+      height: auto !important;
+    }
+
+    .hero-image img {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+    }
+  }
+
+
+
+    </style>
+  </head>
+
+  <body>
+  <div class="grow shrink-0">
+
+    <!-- ================= HEADER (MASTER – SAME AS ABOUT/CAREER) ================= -->
+    <header class="relative wrapper !bg-[#ffffff]">
+      <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+        <div class="container xl:!flex-row lg:!flex-row !flex-nowrap items-center">
+
+          <div class="navbar-brand w-full">
+            <a href="./index.html">
+              <img src="./assets/img/trise/logo.png" width="220" alt="Trisentrix">
+            </a>
+          </div>
+
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+            <div class="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between flex-row p-6">
+              <h3 class="!text-white !mb-0">Trisentrix</h3>
+              <button type="button" class="hamburger offcanvas-nav-btn" aria-label="Open navigation menu"><span></span></button>
+            </div>
+
+            <div class="offcanvas-body xl:!ml-auto lg:!ml-auto flex flex-col !h-full">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="blogs.html">Our Blogs</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="navbar-other w-full !flex !ml-auto">
+            <ul class="navbar-nav !flex-row !items-center !ml-auto">
+              <li class="nav-item hidden xl:block lg:block md:block">
+                <a href="./contact.html"
+                  class="btn btn-sm btn-primary !text-white !bg-[#3f78e0] !rounded-[50rem]">
+                  Contact
+                </a>
+              </li>
+              <li class="nav-item xl:!hidden lg:!hidden">
+                <button type="button" class="hamburger offcanvas-nav-btn" aria-label="Open navigation menu"><span></span></button>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+
+
+  <!-- HERO IMAGE BELOW HEADER -->
+  <section class="hero-image">
+    <img src="./assets/img/trise/hero-image.png" alt="Trisentrix Blogs">
+  </section>
+
+
+
+  <section class="blog-intro">
+    <h2>Insights That Drive Strategic Growth</h2>
+    <p>
+      Explore frameworks, leadership ideas, and practical strategies
+      designed to help modern businesses scale with confidence.
+    </p>
+  </section>
+
+
+  <!-- ================= BLOG CONTENT ================= -->
+  <div class="blogs-wrapper">
+
+    <section id="main-featured-blog">
+    <!-- Latest blog -->
+    </section>
+
+  <h2 class="section-title featured-title">
+    Featured Reads
+  </h2>
+
+  <div class="featured-layout">
+    <!-- Left Quote (desktop only) -->
+    <div class="side-quote left-quote"></div>
+
+    <!-- Center Featured Read (your existing block) -->
+    <div class="featured-row">
+      <div class="featured-slider">
+        <div id="featured-card"></div>
+      </div>
+    </div>
+
+    <!-- Right Quote (desktop only) -->
+    <div class="side-quote right-quote"></div>
+  </div>
+    
+  </div>
+
+    <div class="explore-blogs-wrapper">
+      <a href="all-blogs.html" class="explore-blogs-btn">
+        Explore More Blogs →
+      </a>
+    </div>
+    <div class="why-blogs">
+    <h3>Why Read Trisentrix Blogs?</h3>
+    <p>
+      Our blogs are crafted for technology leaders and architects seeking
+      clarity, scalability, and real-world implementation strategies
+      across modern enterprise systems.
+    </p>
+  </div>
+
+  </section>
+
+  <script>
+    const quotes = [
+    { text: "Innovation distinguishes between a leader and a follower.", author: "Steve Jobs" },
+    { text: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+    { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" },
+    { text: "Great vision without great people is irrelevant.", author: "Jim Collins" },
+    { text: "Move fast, but don’t break trust.", author: "Satya Nadella" },
+    { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
+    { text: "Execution eats strategy for breakfast.", author: "Peter Drucker" },
+    { text: "First principles thinking is the key to breakthrough innovation.", author: "Elon Musk" },
+    { text: "You cannot manage what you cannot measure.", author: "W. Edwards Deming" },
+    { text: "Design is not just what it looks like and feels like. Design is how it works.", author: "Steve Jobs" },
+    { text: "The art of simplicity is a puzzle of complexity.", author: "Douglas Horton" },
+    { text: "Leadership is not about being in charge. It is about taking care of those in your charge.", author: "Simon Sinek" },
+    { text: "Data beats emotions.", author: "Sean Rad" },
+    { text: "If you can’t explain it simply, you don’t understand it well enough.", author: "Albert Einstein" },
+    { text: "Success is not final; failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+    { text: "Don’t worry about failure; you only have to be right once.", author: "Drew Houston" },
+    { text: "Strategy is about making choices, trade-offs; it’s about deliberately choosing to be different.", author: "Michael Porter" },
+    { text: "Great things in business are never done by one person.", author: "Steve Jobs" },
+    { text: "Make everything as simple as possible, but not simpler.", author: "Albert Einstein" },
+    { text: "The secret of getting ahead is getting started.", author: "Mark Twain" }
+  ];
+
+    function getRandomQuote(excludeIndex = -1) {
+    let index;
+    do {
+      index = Math.floor(Math.random() * quotes.length);
+    } while (index === excludeIndex);
+    return { quote: quotes[index], index };
+  }
+
+  const leftQuoteEl = document.querySelector(".left-quote");
+  const rightQuoteEl = document.querySelector(".right-quote");
+
+  function renderRandomQuotes() {
+    if (!leftQuoteEl || !rightQuoteEl) return;
+
+    const left = getRandomQuote();
+    const right = getRandomQuote(left.index);
+
+    leftQuoteEl.innerHTML = `
+      <p class="quote-text">“${left.quote.text}”</p>
+      <span class="quote-author">— ${left.quote.author}</span>
+    `;
+
+    rightQuoteEl.innerHTML = `
+      <p class="quote-text">“${right.quote.text}”</p>
+      <span class="quote-author">— ${right.quote.author}</span>
+    `;
+  }
+
+  // Initial render
+  renderRandomQuotes();
+
+  // Optional: rotate quotes every 8 seconds (desktop only)
+  if (window.innerWidth > 1024) {
+    setInterval(renderRandomQuotes, 8000);
+  }
+    const isGitHubPages = window.location.hostname.includes("github.io");
+  const repoName = "automation-website-";  // 👈 your repo name
+  const basePath = isGitHubPages ? `/${repoName}` : "";
+
+  const bgColors = [
+    '#f4f7fe', // soft blue
+    '#eefaf5', // mint
+    '#fff7ed', // warm peach
+    '#fef2f2', // soft red
+    '#f0f9ff', // sky blue
+    '#f5f3ff', // lavender
+    '#ecfeff', // cyan mist
+    '#f7fee7', // lime pastel
+    '#fff1f2', // rose
+    '#f8fafc', // cool gray
+    '#fdf4ff', // soft purple
+    '#fefce8', // pale yellow
+    '#eff6ff', // light indigo
+    '#ecfdf5', // light emerald
+    '#faf5ff'  // ultra light violet
+  ];
+
+
+
+  fetch(`./blogs-data/index.json`)
+    .then(res => res.json())
+    .then(blogs => {
+
+      if (!blogs.length) return;
+
+      blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      const latestBlog = blogs[0];
+
+      document.getElementById('main-featured-blog').innerHTML = `
+        <div class="main-featured-card">
+          <img src="${basePath}/${latestBlog.image}" alt="${latestBlog.title}">
+          <div class="main-featured-content">
+            <small>Latest Read</small>
+            <h2>${latestBlog.title}</h2>
+            <small>${latestBlog.date}</small><br>
+            <a href="${basePath}/${latestBlog.path}">Read full blog →</a>
+          </div>
+        </div>
+      `;
+
+
+      // 3️⃣ Remove latest blog from list
+      const remainingBlogs = blogs.slice(1);
+
+      // 4️⃣ Shuffle remaining blogs (RANDOM)
+      const shuffled = remainingBlogs.sort(() => 0.5 - Math.random());
+
+      // 5️⃣ Pick first 4 for Featured Reads
+      const featuredBlogs = shuffled.slice(0, 4);
+
+      // 6️⃣ Render Featured Reads
+      const featuredContainer = document.getElementById('featured-card');
+
+      let currentIndex = 0;
+
+      // shuffle once (no repeat)
+      featuredBlogs.sort(() => Math.random() - 0.5);
+
+  function renderFeatured(blog) {
+    featuredContainer.innerHTML = `
+      <div class="featured-card swipe-left" style="background:${bgColors[currentIndex % bgColors.length]}">
+        <img src="${basePath}/${blog.image}" alt="${blog.title}">
+        <div class="featured-content">
+          <h3>${blog.title}</h3>
+          <small>${blog.date}</small>
+        </div>
+      </div>
+    `;
+
+        featuredContainer.onclick = () => {
+          window.location.href = 'all-blogs.html';
+        };
+      }
+
+      // first card
+      renderFeatured(featuredBlogs[currentIndex]);
+
+      // auto swipe
+      setInterval(() => {
+        currentIndex++;
+
+        if (currentIndex >= featuredBlogs.length) {
+          currentIndex = 0;
+        }
+
+        renderFeatured(featuredBlogs[currentIndex]);
+      }, 5000);
+
+    
+      // 7️⃣ Render remaining blogs (exclude featured ones)
+      const usedUrls = new Set(featuredBlogs.map(b => b.url));
+    
+      listContainer.innerHTML = '';
+
+      remainingBlogs.forEach(blog => {
+        if (usedUrls.has(blog.url)) return;
+
+        const div = document.createElement('div');
+        div.className = 'blog-card';
+        div.innerHTML = `
+          <img src="${blog.image}" alt="${blog.title}">
+          <h3>${blog.title}</h3>
+          <small>${blog.date}</small><br>
+          <a href="${blog.path}">Read full blog →</a>
+        `;
+        listContainer.appendChild(div);
+      });
+
+    })
+    .catch(() => {
+      document.getElementById('blog-list').innerHTML = '<p>Error loading blogs</p>';
+    });
+
+
+  const slider = document.getElementById('featured-reads-list');
+
+  let scrollAmount = 0;
+  let autoScrollInterval;
+
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      slider.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+      });
+
+      // Reset when end reached
+      if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+    }, 3000); // every 3 seconds
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  // Start auto scroll
+  startAutoScroll();
+
+  // Pause on hover
+  slider.addEventListener('mouseenter', stopAutoScroll);
+  slider.addEventListener('mouseleave', startAutoScroll);
+
+  </script>
+  </div>
+  <!-- ================= FOOTER (MASTER – SAME AS ABOUT/CAREER) ================= -->
+  <footer class="site-footer shrink-0">
+    <div class="footer-inner">
+      <div class="container py-16 xl:!py-20 lg:!py-20 md:!py-20">
+        <div class="flex flex-wrap mx-[-15px] !mt-[-30px] xl:!mt-0 lg:!mt-0">
+          <div class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]">
+            <div class="widget !text-[#cacaca]">
+              <img class="!mb-4" src="./assets/img/trise/logo.png" srcset="./assets/img/trise/logo.png 2x" width="180" alt="image">
+
+              <ul class="pl-0 list-none !mb-0">
+                <li><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#">Privacy Policy</a></li>
+                <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#">Terms of Use</a></li>
+              </ul>
+
+              <p class="!mb-4 !mt-5">© 2025 Trisentrix. <br class="hidden xl:block lg:block">All rights reserved.</p>
+              <!-- <nav class="nav social">
+                <a class="!text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-twitter before:content-['\ed59'] !text-white text-[1rem]"></i></a>
+                <a class="!text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-facebook-f before:content-['\eae2'] !text-white text-[1rem]"></i></a>
+                <a class="!text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-dribbble before:content-['\eaa2'] !text-white text-[1rem]"></i></a>
+                <a class="!text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-instagram before:content-['\eb9c'] !text-white text-[1rem]"></i></a>
+                <a class="!text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-youtube before:content-['\edb5'] !text-white text-[1rem]"></i></a>
+              </nav> -->
+              <!-- /.social -->
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+          <div class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]">
+            <div class="widget !text-[#cacaca]">
+              <h4 class="widget-title !text-white !mb-3">Get in Touch</h4>
+              <address class="xl:!pr-20 xxl:!pr-28 not-italic !leading-[inherit] block !mb-4">715-A, 7th Floor, Spenser Plaza, Mount Road, Chennai - 600002.</address>
+              <a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="mailto:contactus@trisentrix.com">contactus@trisentrix.com</a>
+              <!-- <br> +1 (800) 555-1234 -->
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+          <div class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]">
+            <div class="widget !text-[#cacaca]">
+              <h4 class="widget-title !text-white !mb-3">Learn More</h4>
+              <ul class="pl-0 list-none !mb-0">
+                <li><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="about.html">About Us</a></li>
+                <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="services.html">Services</a></li>
+                <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="product.html">Products</a></li>
+                <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="career.html">Careers</a></li>
+                <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="contact.html">Contact</a></li>
+                <li class="!mt-[0.35rem]"><a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="blogs.html">Our Blogs</a></li>
+              </ul>
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+          <div class="md:w-full xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]">
+            <div class="widget !text-[#cacaca]">
+              <h4 class="widget-title !text-white !mb-3">Our Newsletter</h4>
+              <p class="!mb-5">Subscribe to our newsletter to get our news & deals delivered to you.</p>
+              <div class="newsletter-wrapper">
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup2">
+                  <form action="javascript:;" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate dark-fields" novalidate>
+                    <div id="mc_embed_signup_scroll2">
+                      <div class="!text-left input-group form-floating !relative flex flex-wrap items-stretch w-full">
+                        <input type="email" value="" name="EMAIL" class="required form-control  relative block w-full text-[.75rem] font-medium !text-[#60697b] bg-[#fefefe] bg-clip-padding border shadow-[0_0_1.25rem_rgba(30,34,40,0.04)] rounded-[0.4rem] border-solid border-[rgba(8,60,130,0.07)] transition-[border-color] duration-[0.15s] ease-in-out     focus:shadow-[0_0_1.25rem_rgba(30,34,40,0.04),unset]   focus-visible:!border-[rgba(63,120,224,0.5)]   placeholder:!text-[#959ca9] placeholder:opacity-100 m-0 !pr-9 p-[.6rem_1rem] h-[calc(2.5rem_+_2px)] min-h-[calc(2.5rem_+_2px)] !leading-[1.25]" placeholder="" id="mce-EMAIL2">
+                        <label class="!ml-[0.05rem] !text-[#959ca9] text-[.75rem] absolute z-[2] h-full overflow-hidden text-start text-ellipsis whitespace-nowrap pointer-events-none origin-[0_0] px-4 py-[0.6rem] left-0 top-0" for="mce-EMAIL2">Email Address</label>
+                        <input type="submit" value="Join" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-primary !text-white !bg-[#3f78e0] border-[#3f78e0] hover:text-white hover:bg-[#3f78e0] hover:!border-[#3f78e0]   active:text-white active:bg-[#3f78e0] active:border-[#3f78e0] disabled:text-white disabled:bg-[#3f78e0] disabled:border-[#3f78e0] !relative z-[2] focus:z-[5] hover:!transform-none hover:!translate-none border-0">
+                      </div>
+                      <div id="mce-responses2" class="clear">
+                        <div class="response" id="mce-error-response2" style="display:none"></div>
+                        <div class="response" id="mce-success-response2" style="display:none"></div>
+                      </div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ddc180777a163e0f9f66ee014_4b1bcfa0bc" tabindex="-1" value=""></div>
+                      <div class="clear"></div>
+                    </div>
+                  </form>
+                </div>
+                <!--End mc_embed_signup-->
+              </div>
+              <!-- /.newsletter-wrapper -->
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!--/.row -->
+      </div>
+    </div>  <!-- /.container -->
+  </footer>
+    <div class="progress-wrap fixed w-[2.3rem] h-[2.3rem] cursor-pointer block shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010] opacity-0 invisible translate-y-3 transition-all duration-[0.2s] ease-[linear,margin-right] delay-[0s] rounded-[100%] right-6 bottom-6 motion-reduce:transition-none after:absolute after:content-['\e951'] after:text-center after:leading-[2.3rem] after:text-[1.2rem] after:!text-[#3f78e0] after:h-[2.3rem] after:w-[2.3rem] after:cursor-pointer after:block after:z-[1] after:transition-all after:duration-[0.2s] after:ease-linear after:left-0 after:top-0 motion-reduce:after:transition-none after:font-Unicons">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path class="fill-none stroke-[#3f78e0] stroke-[4] box-border transition-all duration-[0.2s] ease-linear motion-reduce:transition-none" d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/theme.js"></script>
+  </body>

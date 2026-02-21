@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond the Prompt: Architecting the Shift Toward Agentic AI Workflows</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #818cf8;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --text-light: #64748b;
+            --bg-body: #ffffff;
+            --bg-alt: #f8fafc;
+            --border-color: #e2e8f0;
+            --container-width: 880px;
+            --font-sans: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Progress Bar (Visual only, pure CSS) */
+        .top-bar {
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .article-wrapper {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        header {
+            margin-bottom: 48px;
+            text-align: left;
+        }
+
+        .category {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2.25rem, 5vw, 3.25rem);
+            line-height: 1.1;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+
+        .meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.9375rem;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 32px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Content Styling */
+        .content {
+            font-size: 1.125rem;
+        }
+
+        .content img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 32px 0 48px 0;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            border: 1px solid var(--border-color);
+        }
+
+        p {
+            margin-bottom: 1.75rem;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 3.5rem 0 1.5rem 0;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            position: relative;
+        }
+
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -12px;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 2.5rem 0 1rem 0;
+        }
+
+        ul, ol {
+            margin-bottom: 1.75rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--primary);
+            padding: 8px 0 8px 24px;
+            margin: 2.5rem 0;
+            font-style: italic;
+            color: var(--text-muted);
+            background-color: var(--bg-alt);
+            border-radius: 0 8px 8px 0;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 4rem 0;
+        }
+
+        /* Footer / Signoff */
+        .author-box {
+            margin-top: 64px;
+            padding: 40px;
+            background-color: var(--bg-alt);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .author-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .author-box p {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .article-wrapper {
+                padding: 60px 20px;
+            }
+            h1 {
+                font-size: 2.25rem;
+            }
+            h2 {
+                font-size: 1.625rem;
+            }
+            .content {
+                font-size: 1.0625rem;
+            }
+        }
+
+        /* Text selection */
+        ::selection {
+            background-color: rgba(37, 99, 235, 0.15);
+            color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar"></div>
+
+    <div class="article-wrapper">
+        <header>
+            <span class="category">AI & Architecture</span>
+            <h1>Beyond the Prompt: Architecting the Shift Toward Agentic AI Workflows</h1>
+            <div class="meta">
+                <div class="meta-item">
+                    <strong>Published:</strong>&nbsp;October 20, 2024
+                </div>
+                <div class="meta-item">
+                    <strong>Reading Time:</strong>&nbsp;8 min read
+                </div>
+            </div>
+        </header>
+
+        <article class="content">
+            <img src="../assets/images/2026-02-19-02-40-15.png" alt="Blog cover image" />
+
+            <p>The initial wave of generative AI implementation focused primarily on the "chatbot" paradigm—direct human-to-machine interfaces designed to summarize text or answer queries.</p>
+            
+            <p>While these systems demonstrated the power of Large Language Models (LLMs), they remained fundamentally reactive, constrained by the "human-in-the-loop" requirement for every sequential step.</p>
+            
+            <p>As the industry matures, we are witnessing a decisive shift from simple Retrieval-Augmented Generation (RAG) toward autonomous agentic workflows. For architects and executives alike, this transition represents a move from passive tools to active digital collaborators capable of planning, reasoning, and executing complex multi-step tasks.</p>
+
+            <h2>The Evolution of Retrieval: From Static to Agentic</h2>
+            
+            <p>First-generation RAG systems solved the LLM "hallucination" problem by providing models with a specific context window of external data. This was a significant leap forward, allowing developers to ground responses in proprietary documentation or real-time news.</p>
+            
+            <p>However, traditional RAG is linear: the user asks a question, the system retrieves documents, and the LLM generates an answer. The limitations of this linear approach become apparent when a task requires multi-step reasoning or iterative refinement.</p>
+            
+            <p>If a query is ambiguous, a standard RAG pipeline often fails because it cannot "ask" for clarification or realize that the retrieved data is insufficient. Agentic RAG addresses this by introducing a reasoning loop. Instead of a single pass, the system evaluates the quality of the retrieved information and, if necessary, chooses to perform a new search, consult a different database, or rephrase the original objective.</p>
+            
+            <p>For the software architect, this means moving away from rigid pipelines toward dynamic graphs. Tools like LangGraph or AutoGen are replacing basic chains, allowing for cycles where the output of one step can trigger a recursive self-correction or a branch into a different logic path.</p>
+
+            <h2>The Anatomy of an Agent: Memory, Planning, and Tool Use</h2>
+            
+            <p>To transition from a model to an agent, a system requires three core capabilities: memory, planning, and tool use. Understanding these components is essential for developers and testers tasked with building and validating these systems.</p>
+
+            <h3>Planning and Decomposition</h3>
+            <p>An agent must be able to break down a high-level goal—such as "analyze the last three years of financial reports and identify risks"—into smaller, actionable sub-goals. This involves "Chain of Thought" (CoT) reasoning, where the model explicitly outlines its steps before executing them. Advanced agents use techniques like "Tree of Thoughts" to explore multiple reasoning paths simultaneously, discarding those that lead to dead ends.</p>
+
+            <h3>Persistent and Contextual Memory</h3>
+            <p>While standard LLMs have a limited context window, agents require two types of memory. Short-term memory is managed via the in-context learning of the current session. Long-term memory, however, involves the use of external vector stores or relational databases that allow the agent to "remember" user preferences and past interactions across different sessions. This persistence is what transforms a session-based bot into a long-term assistant.</p>
+
+            <h3>Tool Integration (The "Action" Layer)</h3>
+            <p>Perhaps the most critical distinction of an agent is its ability to interact with the physical and digital world. Through API calling and function execution, an agent can check a calendar, execute code in a sandbox environment, or query a SQL database. The LLM acts as the "brain" or the central controller that decides which tool to use, what parameters to pass, and how to interpret the results.</p>
+
+            <h2>Engineering for Reliability: The Testing Challenge</h2>
+            
+            <p>For testers and QA engineers, agentic systems introduce a high degree of non-determinism. Traditional unit testing, which relies on predictable inputs and outputs, is insufficient for a system that can take five different paths to reach the same conclusion.</p>
+            
+            <p>The focus is shifting toward "Evals"—a framework for evaluating LLM outputs based on specific criteria like faithfulness, relevance, and safety. Testing an agent requires simulating various "agentic loops" to ensure the system doesn't get stuck in an infinite recursion or perform unintended actions.</p>
+            
+            <p>This necessitates the use of "LLM-as-a-judge" patterns, where a more powerful model (like GPT-4o or Claude 5 Sonnet) is used to grade the performance of the agentic system. Moreover, "red-teaming" becomes vital when agents have tool-use capabilities. An agent with access to a terminal or a database must be constrained by strict permissions (Least Privilege Principle) to prevent it from accidentally deleting data or exposing sensitive information during its reasoning process.</p>
+
+            <h2>Strategic Implications: The Executive Perspective</h2>
+            
+            <p>For C-level executives, the shift to agentic workflows is not just a technical upgrade; it is a strategic pivot in how human capital is deployed. The primary value proposition lies in the reduction of "cognitive overhead." By delegating multi-step research and administrative tasks to agents, organizations can significantly compress the time-to-market for complex projects.</p>
+            
+            <p>However, this transition requires a rethink of ROI. The cost of running an agentic system is often higher than a simple RAG pipeline because it involves multiple model calls for a single task. Strategic leaders must balance the increased token expenditure against the productivity gains of autonomous execution.</p>
+            
+            <p>Furthermore, the "Modular Monolith" vs. "Microservices" debate has entered the AI space. Should an enterprise build one giant agent that knows everything, or a swarm of specialized "micro-agents" that communicate with each other? Current best practices suggest that a multi-agent orchestration—where a "Manager Agent" delegates tasks to specialized "Worker Agents"—is more scalable, easier to debug, and more cost-effective.</p>
+
+            <h2>The Path Forward: Toward Autonomous Reasoning</h2>
+            
+            <p>As we move toward 2025, the boundary between "software" and "intelligence" will continue to blur. We are moving toward a future where applications are not just collections of buttons and forms, but dynamic entities that understand intent.</p>
+            
+            <p>For university students entering the field, the most valuable skill will not be writing the perfect prompt, but understanding the underlying orchestration of these systems. The ability to design robust state machines, manage long-term memory, and implement rigorous evaluation frameworks will be the hallmark of the next generation of AI engineers.</p>
+            
+            <p>The transition to agentic workflows marks the end of the AI "toy" phase. We are now entering the era of functional, autonomous systems that do not just talk about work but actually perform it. The challenge for the industry is no longer about whether these models are "smart" enough, but whether our architectures are sophisticated enough to direct that intelligence toward reliable, safe, and valuable outcomes.</p>
+        </article>
+
+        <footer class="author-box">
+            <h4>Engineering Insights</h4>
+            <p>This article explores the technical transition from passive LLM integration to autonomous agentic architectures. For more deep dives into enterprise software architecture, follow our technical blog series.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

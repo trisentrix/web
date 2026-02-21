@@ -1,0 +1,998 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>All Blogs | Trisentrix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- REQUIRED GLOBAL CSS -->
+    <link rel="shortcut icon" href="./assets/img/favicon.png" />
+    <link rel="stylesheet" href="./assets/fonts/unicons/unicons.css" />
+    <link rel="stylesheet" href="./assets/css/plugins.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, sans-serif;
+        color: #0f172a;
+        background: #edf2fc; /* SAME AS BLOG PAGE */
+      }
+
+      /* PAGE CONTENT ONLY */
+      .page-bg {
+        padding: 90px 0 120px;
+      }
+
+      .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .blogs-subtitle {
+        text-align: center;
+        max-width: 640px;
+        margin: -30px auto 50px;
+        font-size: 17px;
+        color: #475569;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 50px;
+      }
+
+      .blogs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
+      }
+
+      .blog-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 26px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .blog-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .blog-card p {
+        color: #475569;
+        line-height: 1.6;
+      }
+
+      .blog-card a {
+        color: #3f78e0;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      #pagination {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 60px;
+      }
+
+      .page-link {
+        background: #ffffff;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-weight: 700;
+        color: #3f78e0;
+        text-decoration: none;
+      }
+
+      .page-link.active {
+        background: #3f78e0;
+        color: #ffffff;
+      }
+
+      /* FORCE HEADER CONTACT BUTTON COLOR */
+      header .btn.btn-primary {
+        background-color: #3f78e0 !important;
+        border-color: #3f78e0 !important;
+        color: #ffffff !important;
+      }
+
+      header .btn.btn-primary:hover {
+        background-color: #2f65c8 !important;
+        border-color: #2f65c8 !important;
+        color: #ffffff !important;
+      }
+
+      /* ================= FOOTER NEWSLETTER – SINGLE SOURCE OF TRUTH ================= */
+
+      footer .newsletter-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        max-width: 420px;
+      }
+
+      footer .newsletter-wrapper input.form-control {
+        height: 48px !important;
+        line-height: 48px !important;
+        padding: 0 16px !important;
+        font-size: 15px;
+        background: #ffffff !important;
+        color: #0f172a !important;
+        border: none !important;
+        border-radius: 10px 0 0 10px;
+        box-shadow: none !important;
+      }
+
+      footer .newsletter-wrapper input::placeholder {
+        color: #9ca3af !important;
+      }
+
+      footer .newsletter-wrapper .btn {
+        height: 48px !important;
+        line-height: 48px !important;
+        padding: 0 22px !important;
+        font-size: 15px;
+        font-weight: 600;
+        background: #3f78e0 !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 0 10px 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      footer .newsletter-wrapper input::placeholder {
+        color: #9ca3af;
+      }
+
+      footer .newsletter-wrapper .btn {
+        height: 48px; /* SAME HEIGHT */
+        padding: 0 22px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 10px;
+        background: #3f78e0 !important;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Focus safety */
+      footer .newsletter-wrapper input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(63, 120, 224, 0.25);
+      }
+
+      footer .newsletter-wrapper input.form-control {
+        border-radius: 10px 0 0 10px;
+      }
+
+      footer .newsletter-wrapper .btn {
+        border-radius: 0 10px 10px 0;
+      }
+
+      footer .newsletter-wrapper input.form-control {
+        height: 48px !important;
+        line-height: 48px !important; /* KEY FIX */
+        padding: 0 16px !important; /* REMOVE BOOTSTRAP PADDING */
+        font-size: 15px;
+        border-radius: 10px;
+        background: #ffffff !important;
+        color: #0f172a !important;
+        border: none !important;
+        box-shadow: none !important;
+        display: block;
+      }
+
+      footer .newsletter-wrapper input::placeholder {
+        color: #9ca3af;
+      }
+
+      footer .newsletter-wrapper .btn {
+        height: 48px !important;
+        line-height: 48px !important; /* KEY FIX */
+        padding: 0 22px !important;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 10px;
+        background: #3f78e0 !important;
+        border: none !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Optional connected look */
+      footer .newsletter-wrapper input.form-control {
+        border-radius: 10px 0 0 10px;
+      }
+
+      footer .newsletter-wrapper .btn {
+        border-radius: 0 10px 10px 0;
+      }
+
+      /* ================= FOOTER NEWSLETTER – FINAL POLISH FIX ================= */
+
+      footer .newsletter-wrapper {
+        display: flex;
+        align-items: stretch; /* IMPORTANT */
+        gap: 12px;
+        max-width: 380px;
+      }
+
+      footer .newsletter-wrapper input.form-control {
+        height: 48px;
+        padding: 0 16px;
+        font-size: 15px;
+        background: #ffffff;
+        color: #0f172a;
+        border: none;
+        border-radius: 10px 0 0 10px;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+      }
+
+      footer .newsletter-wrapper input::placeholder {
+        color: #9ca3af;
+      }
+
+      /* BUTTON FIX */
+      footer .newsletter-wrapper .btn {
+        height: 48px;
+        padding: 0 22px;
+        font-size: 15px;
+        font-weight: 600;
+        background: #3f78e0;
+        color: #ffffff;
+        border: none;
+        border-radius: 0 10px 10px 0;
+
+        display: flex; /* KEY FIX */
+        align-items: center; /* vertical center */
+        justify-content: center; /* horizontal center */
+      }
+
+      .all-blogs-banner {
+        width: 100%;
+        background-color: #ffffff;
+        padding: 0; /* remove extra padding */
+      }
+
+      .all-blogs-banner-img {
+        width: 100%;
+        height: auto; /* 🔥 KEY FIX */
+        max-height: 510px;
+        object-fit: contain; /* 🔥 FULL IMAGE */
+        display: block;
+        background: #ffffff;
+      }
+
+      img[src*="all-blogs.png"] {
+        animation: allBlogsFadeUp 1.2s ease-out both;
+        will-change: transform, opacity;
+      }
+
+      @keyframes allBlogsFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .why-trisentrix {
+        background: #f4f7fe;
+        padding: 80px 0 90px;
+        text-align: center;
+      }
+
+      .why-trisentrix h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 14px;
+        color: #0f172a;
+      }
+
+      .why-subtext {
+        max-width: 720px;
+        margin: 0 auto 50px;
+        font-size: 17px;
+        color: #475569;
+        line-height: 1.7;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+      }
+
+      .why-card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 34px 26px;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      .why-icon {
+        font-size: 36px;
+        display: block;
+        margin-bottom: 14px;
+      }
+
+      .why-card h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #0f172a;
+      }
+
+      .why-card p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #475569;
+      }
+
+      .blog-card {
+        transition:
+          background-color 0.4s ease,
+          transform 0.3s ease;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-4px);
+      }
+
+      .blog-card {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+      }
+
+      .blog-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      @media (max-width: 768px) {
+        .all-blogs-banner-img {
+          height: auto;
+          max-height: none;
+          object-fit: contain;
+        }
+      }
+
+      /* ================= BLOG CARD POLISH ================= */
+
+      /* Date pill */
+      .blog-date {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 4px 12px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 999px;
+        background: rgba(63, 120, 224, 0.12);
+        color: #3f78e0;
+      }
+
+      .blog-date {
+        max-width: fit-content;
+      }
+
+      /* Stronger title hierarchy */
+      .blog-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.35;
+        margin-bottom: 10px;
+        color: #0f172a;
+      }
+
+      /* Slightly tighter paragraph */
+      .blog-card p {
+        font-size: 14.5px;
+        line-height: 1.55;
+        margin-bottom: 12px;
+      }
+      /* ================= BLOG SEARCH BAR ================= */
+
+      .blogs-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 40px;
+      }
+
+      .blogs-search-box {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+      }
+
+      .blogs-search-box input {
+        width: 100%;
+        padding: 14px 44px 14px 16px;
+        border-radius: 14px;
+        border: 1px solid rgba(63, 120, 224, 0.25);
+        font-size: 15px;
+        outline: none;
+        background: #ffffff;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        transition: all 0.25s ease;
+      }
+
+      .blogs-search-box input::placeholder {
+        color: #94a3b8;
+      }
+
+      .blogs-search-box input:focus {
+        border-color: #3f78e0;
+        box-shadow: 0 0 0 3px rgba(63, 120, 224, 0.15);
+      }
+
+      .blogs-search-box .search-icon {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+        color: #64748b;
+        pointer-events: none;
+      }
+
+      @media (max-width: 768px) {
+        .blogs-search-box {
+          max-width: 100%;
+        }
+      }
+
+      /* CTA polish */
+      .blog-card a {
+        display: inline-block;
+        transition: transform 0.2s ease;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+      }
+
+      /* Subtle top accent */
+      .blog-card {
+        position: relative;
+      }
+
+      .blog-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: rgba(63, 120, 224, 0.35);
+        border-radius: 12px 12px 0 0;
+      }
+
+      .blogs-grid {
+        align-items: stretch;
+      }
+
+      .blog-card {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .blog-card p {
+        flex-grow: 1;
+      }
+
+      .blog-card p {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .blog-card {
+        padding: 22px; /* instead of 26px */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header>
+      <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+        <div
+          class="container xl:!flex-row lg:!flex-row !flex-nowrap items-center"
+        >
+          <div class="navbar-brand w-full">
+            <a href="./index.html">
+              <img
+                src="./assets/img/trise/logo.png"
+                width="220"
+                alt="Trisentrix"
+              />
+            </a>
+          </div>
+
+          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+            <div
+              class="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between p-6"
+            >
+              <h3 class="!text-white !mb-0">Trisentrix</h3>
+              <button
+                type="button"
+                class="hamburger offcanvas-nav-btn"
+                aria-label="Open navigation menu"
+              >
+                <span></span>
+              </button>
+            </div>
+
+            <div
+              class="offcanvas-body xl:!ml-auto lg:!ml-auto flex flex-col !h-full"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="product.html">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="career.html">Careers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="blogs.html">Our Blogs</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="navbar-other w-full !flex !ml-auto">
+            <ul class="navbar-nav !flex-row !items-center !ml-auto">
+              <li class="nav-item hidden xl:block lg:block md:block">
+                <a
+                  href="./contact.html"
+                  class="btn btn-sm btn-primary !rounded-[50rem]"
+                >
+                  Contact
+                </a>
+              </li>
+              <li class="nav-item xl:!hidden lg:!hidden">
+                <button
+                  type="button"
+                  class="hamburger offcanvas-nav-btn"
+                  aria-label="Open navigation menu"
+                >
+                  <span></span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="all-blogs-banner" id="allblogs-hero">
+      <img
+        src="assets/img/trise/all-blogs.png"
+        alt="All Blogs"
+        class="all-blogs-banner-img"
+      />
+    </section>
+
+    <!-- WHY READ TRISENTRIX BLOGS -->
+    <section class="why-trisentrix" id="allblogs-why">
+      <div class="container">
+        <h2>Why Read Trisentrix Blogs?</h2>
+        <p class="why-subtext">
+          Our blogs are written for technology leaders who want clarity,
+          scalability, and real-world architectural direction — not theory.
+        </p>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <span class="why-icon">🧠</span>
+            <h4>Architecture-First Thinking</h4>
+            <p>
+              Every article starts from system design fundamentals, not tools or
+              trends.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <span class="why-icon">⚙️</span>
+            <h4>Real-World Implementation</h4>
+            <p>
+              Patterns and frameworks validated in real enterprise deployments.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <span class="why-icon">📈</span>
+            <h4>Built for Tech Leaders</h4>
+            <p>
+              Written for CTOs, architects, and engineering leaders driving
+              scale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAGE CONTENT ================= -->
+    <section class="page-bg">
+      <div class="wrapper">
+        <h1>All Blogs</h1>
+
+        <div class="blogs-header">
+          <p class="blogs-subtitle">
+            Insights on architecture, scalability, and enterprise systems
+          </p>
+
+          <div class="blogs-search-box">
+            <input
+              type="text"
+              id="blog-search"
+              placeholder="Search blogs by title..."
+              aria-label="Search blogs"
+            />
+            <span class="search-icon">🔍</span>
+          </div>
+        </div>
+        <div id="all-blogs-list" class="blogs-grid"></div>
+        <div id="pagination"></div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="!bg-[#21262c] shrink-0">
+      <div class="container py-16 xl:!py-20 lg:!py-20 md:!py-20">
+        <div class="flex flex-wrap mx-[-15px] !mt-[-30px] xl:!mt-0 lg:!mt-0">
+          <div
+            class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]"
+          >
+            <div class="widget !text-[#cacaca]">
+              <img
+                class="!mb-4"
+                src="./assets/img/trise/logo.png"
+                srcset="./assets/img/trise/logo.png 2x"
+                width="180"
+                alt="image"
+              />
+
+              <ul class="pl-0 list-none !mb-0">
+                <li>
+                  <a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a class="!text-[#cacaca] hover:!text-[#3f78e0]" href="#"
+                    >Terms of Use</a
+                  >
+                </li>
+              </ul>
+
+              <p class="!mb-4 !mt-5">
+                © 2025 Trisentrix. <br class="hidden xl:block lg:block" />All
+                rights reserved.
+              </p>
+              <!-- <nav class="nav social">
+              <a class="!text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-twitter before:content-['\ed59'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-facebook-f before:content-['\eae2'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-dribbble before:content-['\eaa2'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-instagram before:content-['\eb9c'] !text-white text-[1rem]"></i></a>
+              <a class="!text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]" href="#"><i class="uil uil-youtube before:content-['\edb5'] !text-white text-[1rem]"></i></a>
+            </nav> -->
+              <!-- /.social -->
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+          <div
+            class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]"
+          >
+            <div class="widget !text-[#cacaca]">
+              <h4 class="widget-title !text-white !mb-3">Get in Touch</h4>
+              <address
+                class="xl:!pr-20 xxl:!pr-28 not-italic !leading-[inherit] block !mb-4"
+              >
+                715-A, 7th Floor, Spenser Plaza, Mount Road, Chennai - 600002.
+              </address>
+              <a
+                class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                href="mailto:contactus@trisentrix.com"
+                >contactus@trisentrix.com</a
+              >
+              <!-- <br> +1 (800) 555-1234 -->
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+          <div
+            class="md:w-4/12 xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]"
+          >
+            <div class="widget !text-[#cacaca]">
+              <h4 class="widget-title !text-white !mb-3">Learn More</h4>
+              <ul class="pl-0 list-none !mb-0">
+                <li>
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="about.html"
+                    >About Us</a
+                  >
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="services.html"
+                    >Services</a
+                  >
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="product.html"
+                    >Products</a
+                  >
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="career.html"
+                    >Careers</a
+                  >
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="contact.html"
+                    >Contact</a
+                  >
+                </li>
+                <li class="!mt-[0.35rem]">
+                  <a
+                    class="!text-[#cacaca] hover:!text-[#3f78e0]"
+                    href="blogs.html"
+                    >Our Blogs</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+          <div
+            class="md:w-full xl:w-3/12 lg:w-3/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!mt-0 lg:!mt-0 !mt-[30px]"
+          >
+            <div class="widget !text-[#cacaca]">
+              <h4 class="widget-title !text-white !mb-3">Our Newsletter</h4>
+              <p class="!mb-5">
+                Subscribe to our newsletter to get our news & deals delivered to
+                you.
+              </p>
+              <div class="newsletter-wrapper">
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup2">
+                  <form
+                    action="javascript:;"
+                    method="post"
+                    id="mc-embedded-subscribe-form2"
+                    name="mc-embedded-subscribe-form"
+                    class="validate dark-fields"
+                    novalidate
+                  >
+                    <div id="mc_embed_signup_scroll2">
+                      <div
+                        class="!text-left input-group form-floating !relative flex flex-wrap items-stretch w-full"
+                      >
+                        <input
+                          type="email"
+                          value=""
+                          name="EMAIL"
+                          class="required form-control relative block w-full text-[.75rem] font-medium !text-[#60697b] bg-[#fefefe] bg-clip-padding border shadow-[0_0_1.25rem_rgba(30,34,40,0.04)] rounded-[0.4rem] border-solid border-[rgba(8,60,130,0.07)] transition-[border-color] duration-[0.15s] ease-in-out focus:shadow-[0_0_1.25rem_rgba(30,34,40,0.04),unset] focus-visible:!border-[rgba(63,120,224,0.5)] placeholder:!text-[#959ca9] placeholder:opacity-100 m-0 !pr-9 p-[.6rem_1rem] h-[calc(2.5rem_+_2px)] min-h-[calc(2.5rem_+_2px)] !leading-[1.25]"
+                          placeholder=""
+                          id="mce-EMAIL2"
+                        />
+                        <label
+                          class="!ml-[0.05rem] !text-[#959ca9] text-[.75rem] absolute z-[2] h-full overflow-hidden text-start text-ellipsis whitespace-nowrap pointer-events-none origin-[0_0] px-4 py-[0.6rem] left-0 top-0"
+                          for="mce-EMAIL2"
+                          >Email Address</label
+                        >
+                        <input
+                          type="submit"
+                          value="Join"
+                          name="subscribe"
+                          id="mc-embedded-subscribe2"
+                          class="btn btn-primary !text-white !bg-[#3f78e0] border-[#3f78e0] hover:text-white hover:bg-[#3f78e0] hover:!border-[#3f78e0] active:text-white active:bg-[#3f78e0] active:border-[#3f78e0] disabled:text-white disabled:bg-[#3f78e0] disabled:border-[#3f78e0] !relative z-[2] focus:z-[5] hover:!transform-none hover:!translate-none border-0"
+                        />
+                      </div>
+                      <div id="mce-responses2" class="clear">
+                        <div
+                          class="response"
+                          id="mce-error-response2"
+                          style="display: none"
+                        ></div>
+                        <div
+                          class="response"
+                          id="mce-success-response2"
+                          style="display: none"
+                        ></div>
+                      </div>
+                      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                      <div
+                        style="position: absolute; left: -5000px"
+                        aria-hidden="true"
+                      >
+                        <input
+                          type="text"
+                          name="b_ddc180777a163e0f9f66ee014_4b1bcfa0bc"
+                          tabindex="-1"
+                          value=""
+                        />
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+                  </form>
+                </div>
+                <!--End mc_embed_signup-->
+              </div>
+              <!-- /.newsletter-wrapper -->
+            </div>
+            <!-- /.widget -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!--/.row -->
+      </div>
+      <!-- /.container -->
+    </footer>
+    <div
+      class="progress-wrap fixed w-[2.3rem] h-[2.3rem] cursor-pointer block shadow-[inset_0_0_0_0.1rem_rgba(128,130,134,0.25)] z-[1010] opacity-0 invisible translate-y-3 transition-all duration-[0.2s] ease-[linear,margin-right] delay-[0s] rounded-[100%] right-6 bottom-6 motion-reduce:transition-none after:absolute after:content-['\e951'] after:text-center after:leading-[2.3rem] after:text-[1.2rem] after:!text-[#3f78e0] after:h-[2.3rem] after:w-[2.3rem] after:cursor-pointer after:block after:z-[1] after:transition-all after:duration-[0.2s] after:ease-linear after:left-0 after:top-0 motion-reduce:after:transition-none after:font-Unicons"
+    >
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path
+          class="fill-none stroke-[#3f78e0] stroke-[4] box-border transition-all duration-[0.2s] ease-linear motion-reduce:transition-none"
+          d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+        />
+      </svg>
+    </div>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/theme.js"></script>
+  </body>
+
+  <script>
+
+    const isGitHubPages = window.location.hostname.includes("github.io");
+    const repoName = "automation-website-";
+    const basePath = isGitHubPages ? `/${repoName}` : "";
+
+        const bgColors = [
+          "#f4f7fe",
+          "#eefaf5",
+          "#fff7ed",
+          "#fef2f2",
+          "#f0f9ff",
+          "#f5f3ff",
+          "#ecfeff",
+          "#f7fee7",
+          "#fff1f2",
+          "#f8fafc",
+          "#fdf4ff",
+          "#fefce8",
+          "#eff6ff",
+          "#ecfdf5",
+          "#faf5ff",
+        ];
+
+        const BLOGS_PER_PAGE = 6;
+
+        // current page from URL (?page=2)
+        const page =
+          parseInt(new URLSearchParams(window.location.search).get("page")) || 1;
+
+        let allBlogs = [];
+
+    fetch(`${basePath}/blogs-data/index.json`)
+      .then((res) => res.json())
+      .then((blogs) => {
+        blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+        allBlogs = blogs;
+
+        renderBlogs(blogs);
+        setupSearch();
+      });
+
+    function renderBlogs(blogs) {
+      const container = document.getElementById("all-blogs-list");
+      const pagination = document.getElementById("pagination");
+      const hero = document.getElementById("allblogs-hero");
+      const why = document.getElementById("allblogs-why");
+
+      const page =
+        parseInt(new URLSearchParams(window.location.search).get("page")) || 1;
+
+      if (page > 1) {
+        if (hero) hero.style.display = "none";
+        if (why) why.style.display = "none";
+      }
+
+      const BLOGS_PER_PAGE = 6;
+      const start = (page - 1) * BLOGS_PER_PAGE;
+      const end = start + BLOGS_PER_PAGE;
+
+      const visible = blogs.slice(start, end);
+
+      const isGitHubPages = window.location.hostname.includes("github.io");
+      const repoName = "automation-website-";
+      const basePath = isGitHubPages ? `/${repoName}` : "";
+
+      container.innerHTML = "";
+
+      visible.forEach((blog, index) => {
+        container.innerHTML += `
+          <div class="blog-card" style="background:${bgColors[index % bgColors.length]}">
+            <img src="${basePath}/${blog.image}" alt="${blog.title}" class="blog-image" />
+            <span class="blog-date">${blog.date}</span>
+            <h3>${blog.title}</h3>
+            <a href="${basePath}/${blog.path}">Read full blog →</a>
+          </div>
+        `;
+      });
+
+      const totalPages = Math.ceil(blogs.length / BLOGS_PER_PAGE);
+      pagination.innerHTML = "";
+
+      if (page > 1) pagination.innerHTML += `<a href="?page=${page - 1}" class="page-link">← Prev</a>`;
+      if (page - 1 >= 1) pagination.innerHTML += `<a href="?page=${page - 1}" class="page-link">${page - 1}</a>`;
+      pagination.innerHTML += `<a href="?page=${page}" class="page-link active">${page}</a>`;
+      if (page + 1 <= totalPages) pagination.innerHTML += `<a href="?page=${page + 1}" class="page-link">${page + 1}</a>`;
+      if (page < totalPages) pagination.innerHTML += `<a href="?page=${page + 1}" class="page-link">Next →</a>`;
+    }
+
+    function setupSearch() {
+      const searchInput = document.getElementById("blog-search");
+
+      searchInput.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase();
+
+        const filtered = allBlogs.filter((blog) =>
+          blog.title.toLowerCase().includes(query)
+        );
+
+        renderBlogs(filtered);
+      });
+    }
+  </script>
+</html>
