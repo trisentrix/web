@@ -1,0 +1,216 @@
+/* ============================================
+   blog.css — Trisentrix Blog Content Styles
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* ── BLOG WRAPPER ── */
+#content-slot {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  background: #ffffff;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── ARTICLE ── */
+#content-slot article,
+#content-slot .article-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+/* ── CATEGORY BADGE ── */
+#content-slot .article-category,
+#content-slot .category {
+  display: inline-block;
+  background: #eef2ff;
+  color: #3f78e0;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── H1 TITLE ── */
+#content-slot h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #21262c;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+}
+
+/* ── H2 SECTION HEADINGS ── */
+#content-slot h2 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #21262c;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(90deg, #eef2ff 0%, transparent 100%);
+  border-left: 4px solid #3f78e0;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ── H3 ── */
+#content-slot h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #343f52;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ── PARAGRAPHS ── */
+#content-slot p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #60697b;
+  margin-bottom: 1.5rem;
+}
+
+/* ── STRONG ── */
+#content-slot strong {
+  font-weight: 700;
+  color: #343f52;
+}
+
+/* ── LINKS ── */
+#content-slot a {
+  color: #3f78e0;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #bfcfff;
+  transition: all 0.2s;
+}
+#content-slot a:hover {
+  color: #2a5dc7;
+  border-bottom-color: #2a5dc7;
+}
+
+/* ── LISTS ── */
+#content-slot ul {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+#content-slot ul li {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #60697b;
+  margin-bottom: 0.6rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+#content-slot ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #3f78e0;
+  font-weight: 700;
+}
+
+#content-slot ol {
+  margin: 0 0 1.5rem 1.5rem;
+  padding: 0;
+}
+#content-slot ol li {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #60697b;
+  margin-bottom: 0.6rem;
+}
+
+/* ── BLOCKQUOTE ── */
+#content-slot blockquote {
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+  border-left: 5px solid #3f78e0;
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #343f52;
+  box-shadow: 0 2px 12px rgba(63,120,224,0.08);
+}
+
+/* ── CODE ── */
+#content-slot code {
+  background: #f1f5fd;
+  color: #3f78e0;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+  font-size: 0.88em;
+  font-weight: 600;
+}
+
+#content-slot pre {
+  background: #1e2535;
+  color: #e2e8f0;
+  padding: 1.75rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: 2.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+#content-slot pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-weight: 400;
+}
+
+/* ── HERO IMAGE ── */
+#content-slot img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  margin: 2.5rem auto;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* ── DIVIDER ── */
+#content-slot hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, #3f78e0, transparent);
+  margin: 3.5rem 0;
+  border-radius: 2px;
+}
+
+/* ── HIGHLIGHT BOX ── */
+#content-slot .highlight-box {
+  background: linear-gradient(135deg, #f0f4ff, #e8f0fe);
+  border-left: 5px solid #3f78e0;
+  padding: 1.5rem 2rem;
+  margin: 2.5rem 0;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 2px 12px rgba(63,120,224,0.08);
+}
+
+/* ── ARTICLE HEADER ── */
+#content-slot header {
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid #eef2ff;
+  padding-bottom: 2rem;
+  background: none !important;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  #content-slot h1 { font-size: 1.9rem; }
+  #content-slot h2 { font-size: 1.35rem; }
+  #content-slot article,
+  #content-slot .article-wrapper { padding: 2rem 1rem 3rem; }
+}
