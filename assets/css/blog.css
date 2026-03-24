@@ -10,7 +10,7 @@
   background: #ffffff;
   max-width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 16px;
 }
 
 /* ── ARTICLE ── */
@@ -213,4 +213,14 @@
   #content-slot h2 { font-size: 1.35rem; }
   #content-slot article,
   #content-slot .article-wrapper { padding: 2rem 1rem 3rem; }
+}
+
+article img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+body {
+  overflow-x: hidden;
 }
