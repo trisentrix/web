@@ -38,6 +38,10 @@ footer a {
   text-decoration: none;
 }
 
+footer {
+  width: 100%;
+}
+
 /* Fix blog content width */
 #content-slot {
     max-width: 900px;
@@ -89,6 +93,23 @@ footer .list-none li {
 .newsletter-wrapper .form-control::placeholder {
   color: #aab0bc !important;
 }
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
 </style>
 </head>
 
@@ -100,7 +121,7 @@ footer .list-none li {
   <div class="container xl:!flex-row lg:!flex-row !flex-nowrap items-center">
 
     <div class="navbar-brand w-full">
-      <a href="./index.html">
+      <a href="/index.html">
         <img src="/assets/img/trise/logo.png"
              srcset="/assets/img/trise/logo.png 2x"
              alt="Trisentrix"
