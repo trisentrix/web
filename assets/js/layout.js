@@ -16,6 +16,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     slot.innerHTML = contentHTML;
   }
 
+  // 5️⃣ Fix Cloudflare email obfuscation
+  document.querySelectorAll('[data-cfemail]').forEach(el => {
+    el.textContent = 'contactus@trisentrix.com';
+    el.closest('a').href = 'mailto:contactus@trisentrix.com';
+  });
+
   // 5️⃣ Reload plugins and theme JS AFTER body is replaced
   const plugins = document.createElement('script');
   plugins.src = '/assets/js/plugins.js';
@@ -26,5 +32,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     theme.src = '/assets/js/theme.js';
     document.body.appendChild(theme);
   };
+  
 
 });
