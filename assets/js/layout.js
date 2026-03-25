@@ -16,4 +16,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     slot.innerHTML = contentHTML;
   }
 
+  // 5️⃣ Reload plugins and theme JS AFTER body is replaced
+  const plugins = document.createElement('script');
+  plugins.src = '/assets/js/plugins.js';
+  document.body.appendChild(plugins);
+
+  plugins.onload = () => {
+    const theme = document.createElement('script');
+    theme.src = '/assets/js/theme.js';
+    document.body.appendChild(theme);
+  };
+
 });
